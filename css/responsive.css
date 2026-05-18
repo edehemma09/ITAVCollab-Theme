@@ -1,0 +1,383 @@
+/* ===== TABLET: 768px – 1199px ===== */
+@media (max-width: 1199px) {
+  :root {
+    --section-padding: 48px 32px;
+    --section-gap: 40px;
+  }
+
+  .navbar-inner {
+    padding: 16px 24px;
+  }
+
+  .navbar-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .nav-label {
+    font-size: 18px !important;
+  }
+
+  .hero-title {
+    font-size: 48px;
+    line-height: 60px;
+  }
+
+  .hero-text-card {
+    padding: 24px 32px;
+  }
+
+  .impact-heading {
+    font-size: 56px;
+  }
+
+  .impact-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .stat-number {
+    font-size: 44px;
+  }
+
+  .footer-nav-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-top {
+    grid-template-columns: 140px 1fr;
+    gap: 40px;
+  }
+
+  .offerings-grid {
+    padding: 0 24px;
+  }
+}
+
+/* ===== MOBILE: max 767px ===== */
+@media (max-width: 767px) {
+  :root {
+    --section-padding: 40px 20px;
+    --section-gap: 28px;
+  }
+
+  /* Navbar */
+  .nav-links,
+  .navbar-donate-btn {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: flex;
+  }
+
+  .mobile-overlay {
+    display: block;
+  }
+
+  .navbar-logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .navbar-inner {
+    padding: 12px 20px;
+  }
+
+  /* Icon bar */
+  .icon-bar {
+    padding: 8px 16px;
+  }
+
+  .icon-bar-right .signin-link {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+
+  /* Hero */
+  .hero-section {
+    min-height: 480px;
+    padding: 40px 20px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+    line-height: 42px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .hero-text-card {
+    padding: 20px 24px;
+  }
+
+  .btn {
+    padding: 18px 28px;
+    font-size: 18px;
+  }
+
+  /* Two column sections → single column */
+  .who-we-are-inner,
+  .centering-inner,
+  .villager-keeper-inner {
+    flex-direction: column;
+  }
+
+  .who-we-are-image,
+  .centering-image,
+  .villager-keeper-image {
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .who-we-are-image img,
+  .centering-image img,
+  .villager-keeper-image img {
+    max-height: 300px;
+  }
+
+  /* Villager keeper — image comes first on mobile */
+  .villager-keeper-inner {
+    flex-direction: column;
+  }
+
+  /* Section headings */
+  .section-heading {
+    font-size: 28px;
+    line-height: 42px;
+  }
+
+  .section-body {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  /* Impact section */
+  .impact-inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .impact-heading {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .impact-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+  }
+
+  .stat-number {
+    font-size: 36px;
+  }
+
+  .stat-label {
+    font-size: 14px;
+  }
+
+  .stat-card {
+    padding: 20px 16px;
+  }
+
+  /* Offerings */
+  .offerings-grid {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    gap: 16px;
+  }
+
+  .offering-card {
+    aspect-ratio: 16/9;
+  }
+
+  /* Partners */
+  .partners-grid {
+    gap: 28px 32px;
+  }
+
+  .partner-logo img {
+    max-height: 60px;
+    max-width: 130px;
+  }
+
+  /* Footer */
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-nav-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .footer-logo-block {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-mission {
+    text-align: center;
+  }
+
+  .footer-nav-heading {
+    font-size: 16px;
+  }
+
+  .footer-nav-link {
+    font-size: 15px;
+  }
+
+  .social-icons {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .social-icon img {
+    height: 36px;
+  }
+
+  .footer-copyright {
+    font-size: 14px;
+  }
+
+  .footer-email {
+    font-size: 16px;
+  }
+}
+
+/* ===== SMALL MOBILE: max 480px ===== */
+@media (max-width: 480px) {
+  .impact-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-nav-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    line-height: 36px;
+  }
+}
+
+/* ===== ABOUT PAGE RESPONSIVE ===== */
+@media (max-width: 1199px) {
+  .about-hero-title {
+    font-size: 44px;
+  }
+
+  .about-hero-content {
+    padding: 40px 32px;
+  }
+
+  .vision-text {
+    font-size: 22px;
+    line-height: 42px;
+  }
+
+  .vision-card {
+    padding: 32px 40px;
+  }
+
+  .story-text-col {
+    padding: 48px 40px;
+  }
+
+  .feature-card-content {
+    padding: 40px 48px;
+  }
+
+  .feature-card-title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-hero {
+    min-height: 320px;
+  }
+
+  .about-hero-title {
+    font-size: 30px;
+    padding: 6px 16px;
+  }
+
+  .about-hero-content {
+    padding: 32px 20px;
+  }
+
+  .vision-section {
+    padding: 40px 20px;
+  }
+
+  .vision-card {
+    padding: 24px 24px;
+  }
+
+  .vision-text {
+    font-size: 18px;
+    line-height: 34px;
+  }
+
+  /* Story sections stack vertically on mobile */
+  .story-section,
+  .story-section.reverse {
+    flex-direction: column;
+  }
+
+  .story-image-col {
+    flex: none;
+    height: 260px;
+    width: 100%;
+  }
+
+  .story-text-col {
+    padding: 32px 20px;
+  }
+
+  .story-text-inner {
+    max-width: 100%;
+  }
+
+  .story-body {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  /* Feature cards stack on mobile */
+  .feature-card-section {
+    flex-direction: column;
+  }
+
+  .feature-card-image {
+    flex: none;
+    height: 240px;
+    width: 100%;
+  }
+
+  .feature-card-content {
+    padding: 32px 20px;
+    gap: 16px;
+  }
+
+  .feature-card-title {
+    font-size: 24px;
+  }
+
+  .feature-card-desc {
+    font-size: 16px;
+    line-height: 28px;
+  }
+}
