@@ -1,0 +1,232 @@
+/* ===== NAVBAR STYLES ===== */
+
+.site-navbar {
+  position: sticky;
+  top: 0;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-light);
+  z-index: var(--z-navbar);
+  transition: box-shadow 0.3s ease;
+}
+
+.site-navbar.scrolled {
+  box-shadow: var(--nav-shadow);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 40px;
+  gap: 40px;
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-logo:hover {
+  opacity: 0.8;
+}
+
+.navbar-logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-link-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: var(--nav-padding);
+  color: var(--text-dark);
+  text-decoration: none;
+  font-family: var(--font-montserrat);
+  font-size: var(--size-nav-link);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-label:hover {
+  color: var(--green-accent);
+}
+
+.nav-label--active {
+  color: var(--green-accent);
+  border-bottom: 2px solid var(--green-accent);
+}
+
+/* Dropdown Arrow */
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.nav-link-item.has-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Menu */
+.nav-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--dropdown-bg);
+  border: 1px solid var(--border-light);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  min-width: 200px;
+  list-style: none;
+  margin: 0;
+  padding: 12px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  z-index: var(--z-dropdown);
+  box-shadow: var(--dropdown-shadow);
+}
+
+.nav-link-item.has-dropdown:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown-item {
+  display: block;
+  padding: 12px 24px;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-family: var(--font-open-sans);
+  font-size: 14px;
+  font-weight: 400;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-dropdown-item:hover {
+  background-color: var(--dropdown-hover);
+  color: var(--green-accent);
+}
+
+/* Donate Button */
+.navbar-donate-btn {
+  flex-shrink: 0;
+  background-color: var(--green-accent);
+  color: var(--white);
+  border: none;
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.navbar-donate-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Hamburger Button (Hidden on Desktop) */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: var(--z-navbar);
+}
+
+.hamburger-btn span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-dark);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* ===== RESPONSIVE NAVBAR ===== */
+
+@media (max-width: 1199px) {
+  .navbar-inner {
+    padding: 12px 24px;
+    gap: 24px;
+  }
+
+  .nav-links {
+    gap: 4px;
+  }
+
+  .nav-label {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .nav-dropdown-item {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-inner {
+    padding: 12px 16px;
+    gap: 16px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .navbar-donate-btn {
+    display: none;
+  }
+}
