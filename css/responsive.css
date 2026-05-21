@@ -1,12 +1,17 @@
+/* ===== RESPONSIVE STYLES ===== */
+/* Breakpoints: Tablet (max 1199px) | Mobile (max 767px) | Small Mobile (max 480px) */
+
 /* ===== TABLET: 768px – 1199px ===== */
 @media (max-width: 1199px) {
   :root {
-    --section-padding: 48px 32px;
+    --section-padding-y: 48px;
+    --section-padding-x: 32px;
+    --section-padding: var(--section-padding-y) var(--section-padding-x);
     --section-gap: 40px;
   }
 
   .navbar-inner {
-    padding: 16px 24px;
+    padding: 16px var(--section-padding-x);
   }
 
   .navbar-logo {
@@ -50,14 +55,46 @@
   }
 
   .offerings-grid {
-    padding: 0 24px;
+    padding: 0 var(--section-padding-x);
+  }
+
+  /* About page tablet */
+  .about-hero-title {
+    font-size: 44px;
+  }
+
+  .about-hero-content {
+    padding: 40px 32px;
+  }
+
+  .vision-text {
+    font-size: 22px;
+    line-height: 42px;
+  }
+
+  .vision-card {
+    padding: 32px 40px;
+  }
+
+  .story-text-col {
+    padding: 48px 40px;
+  }
+
+  .feature-card-content {
+    padding: 40px 48px;
+  }
+
+  .feature-card-title {
+    font-size: 28px;
   }
 }
 
 /* ===== MOBILE: max 767px ===== */
 @media (max-width: 767px) {
   :root {
-    --section-padding: 40px 20px;
+    --section-padding-y: 40px;
+    --section-padding-x: 20px;
+    --section-padding: var(--section-padding-y) var(--section-padding-x);
     --section-gap: 28px;
   }
 
@@ -85,7 +122,7 @@
   }
 
   .navbar-inner {
-    padding: 12px 20px;
+    padding: 12px var(--section-padding-x);
   }
 
   /* Icon bar */
@@ -101,7 +138,7 @@
   /* Hero */
   .hero-section {
     min-height: 480px;
-    padding: 40px 20px;
+    padding: var(--section-padding);
   }
 
   .hero-title {
@@ -124,7 +161,7 @@
     font-size: 18px;
   }
 
-  /* Two column sections → single column */
+  /* Two-column → single column */
   .who-we-are-inner,
   .centering-inner,
   .villager-keeper-inner {
@@ -144,12 +181,7 @@
     max-height: 300px;
   }
 
-  /* Villager keeper — image comes first on mobile */
-  .villager-keeper-inner {
-    flex-direction: column;
-  }
-
-  /* Section headings */
+  /* Section typography */
   .section-heading {
     font-size: 28px;
     line-height: 42px;
@@ -160,7 +192,7 @@
     line-height: 32px;
   }
 
-  /* Impact section */
+  /* Impact */
   .impact-inner {
     flex-direction: column;
     gap: 32px;
@@ -192,7 +224,7 @@
   /* Offerings */
   .offerings-grid {
     grid-template-columns: 1fr;
-    padding: 0 20px;
+    padding: 0 var(--section-padding-x);
     gap: 16px;
   }
 
@@ -240,7 +272,6 @@
 
   .social-icons {
     gap: 20px;
-    flex-wrap: wrap;
   }
 
   .social-icon img {
@@ -254,57 +285,8 @@
   .footer-email {
     font-size: 16px;
   }
-}
 
-/* ===== SMALL MOBILE: max 480px ===== */
-@media (max-width: 480px) {
-  .impact-stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-nav-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-title {
-    font-size: 26px;
-    line-height: 36px;
-  }
-}
-
-/* ===== ABOUT PAGE RESPONSIVE ===== */
-@media (max-width: 1199px) {
-  .about-hero-title {
-    font-size: 44px;
-  }
-
-  .about-hero-content {
-    padding: 40px 32px;
-  }
-
-  .vision-text {
-    font-size: 22px;
-    line-height: 42px;
-  }
-
-  .vision-card {
-    padding: 32px 40px;
-  }
-
-  .story-text-col {
-    padding: 48px 40px;
-  }
-
-  .feature-card-content {
-    padding: 40px 48px;
-  }
-
-  .feature-card-title {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 767px) {
+  /* About page mobile */
   .about-hero {
     min-height: 320px;
   }
@@ -319,11 +301,11 @@
   }
 
   .vision-section {
-    padding: 40px 20px;
+    padding: var(--section-padding);
   }
 
   .vision-card {
-    padding: 24px 24px;
+    padding: 24px;
   }
 
   .vision-text {
@@ -331,7 +313,6 @@
     line-height: 34px;
   }
 
-  /* Story sections stack vertically on mobile */
   .story-section,
   .story-section.reverse {
     flex-direction: column;
@@ -356,7 +337,6 @@
     line-height: 30px;
   }
 
-  /* Feature cards stack on mobile */
   .feature-card-section {
     flex-direction: column;
   }
@@ -379,5 +359,26 @@
   .feature-card-desc {
     font-size: 16px;
     line-height: 28px;
+  }
+}
+
+/* ===== SMALL MOBILE: max 480px ===== */
+@media (max-width: 480px) {
+  .impact-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-nav-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  .section-heading {
+    font-size: 24px;
+    line-height: 36px;
   }
 }

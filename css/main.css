@@ -1,3 +1,5 @@
+/* ===== ITAVCOLLAB MAIN STYLESHEET ===== */
+/* Import order: variables → base → layout → components → sections → pages */
 @import url('variables.css');
 
 /* ===== RESET & BASE ===== */
@@ -49,7 +51,7 @@ ul {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 var(--section-padding-x);
 }
 
 .section-inner {
@@ -83,6 +85,16 @@ ul {
   gap: 8px;
 }
 
+.icon-bar-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
 .icon-bar-right .signin-link {
   color: var(--white);
   font-family: var(--font-montserrat);
@@ -92,6 +104,11 @@ ul {
   padding: 10px 16px;
   display: flex;
   align-items: center;
+  transition: opacity 0.2s;
+}
+
+.icon-bar-right .signin-link:hover {
+  opacity: 0.8;
 }
 
 .icon-bar-right .cart-btn {
@@ -111,7 +128,7 @@ ul {
   width: 100%;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: var(--z-navbar);
   transition: box-shadow 0.2s ease;
 }
 
@@ -123,7 +140,7 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 24px 40px;
+  padding: 24px var(--section-padding-x);
   max-width: 1512px;
   margin: 0 auto;
 }
@@ -136,6 +153,11 @@ ul {
   justify-content: center;
   flex-shrink: 0;
   overflow: hidden;
+  transition: opacity 0.2s;
+}
+
+.navbar-logo:hover {
+  opacity: 0.85;
 }
 
 .navbar-logo img {
@@ -144,6 +166,7 @@ ul {
   object-fit: contain;
 }
 
+/* ===== DESKTOP NAV LINKS ===== */
 .nav-links {
   display: flex;
   align-items: center;
@@ -167,13 +190,27 @@ ul {
   line-height: var(--line-height-nav-link);
   letter-spacing: -0.456px;
   white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.nav-link-item .nav-label:hover {
+  opacity: 0.75;
+}
+
+.nav-label--active {
+  border-bottom: 2px solid var(--green-accent);
 }
 
 .nav-link-item .dropdown-arrow {
   flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
-/* Desktop dropdown */
+.nav-link-item.has-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* ===== DESKTOP DROPDOWN ===== */
 .nav-link-item.has-dropdown {
   position: relative;
 }
@@ -183,11 +220,12 @@ ul {
   position: absolute;
   top: calc(100% + 4px);
   left: 0;
-  background: var(--white);
+  background: var(--dropdown-bg);
   border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  min-width: 200px;
-  z-index: 999;
+  box-shadow: var(--dropdown-shadow);
+  border: 1px solid var(--border-light);
+  min-width: 220px;
+  z-index: var(--z-dropdown);
   flex-direction: column;
   padding: 8px 0;
 }
@@ -197,20 +235,21 @@ ul {
 }
 
 .nav-dropdown-item {
-  padding: 10px 20px;
+  padding: 12px 20px;
   color: var(--chrome-raisin-black);
   font-family: var(--font-montserrat);
   font-size: 16px;
   font-weight: 500;
-  transition: background 0.15s;
+  transition: background 0.15s, color 0.15s;
+  display: block;
 }
 
 .nav-dropdown-item:hover {
-  background: var(--chrome-granite-gray);
+  background: var(--dropdown-hover);
   color: var(--green-accent);
 }
 
-/* Hamburger (mobile) */
+/* ===== HAMBURGER BUTTON (mobile only) ===== */
 .hamburger-btn {
   display: none;
   flex-direction: column;
@@ -230,6 +269,18 @@ ul {
   transition: all 0.3s;
 }
 
+.hamburger-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
 /* ===== MOBILE MENU ===== */
 .mobile-menu {
   display: none;
@@ -241,8 +292,8 @@ ul {
   width: min(320px, 85vw);
   height: 100vh;
   overflow-y: auto;
-  z-index: 1000;
-  padding: 80px 24px 40px;
+  z-index: var(--z-mobile-menu);
+  padding: 80px 24px 120px;
   transition: right 0.3s ease;
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
 }
@@ -256,7 +307,7 @@ ul {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.4);
-  z-index: 998;
+  z-index: calc(var(--z-mobile-menu) - 1);
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -272,8 +323,9 @@ ul {
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 28px;
   color: var(--green-accent);
+  line-height: 1;
 }
 
 .mobile-nav-link {
@@ -287,6 +339,19 @@ ul {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+}
+
+.nav-link-dropdown .mobile-nav-link svg {
+  transition: transform 0.3s ease;
+}
+
+.nav-link-dropdown.dropdown-open .mobile-nav-link svg {
+  transform: rotate(180deg);
 }
 
 .mobile-submenu {
@@ -294,6 +359,11 @@ ul {
   overflow: hidden;
   transition: max-height 0.3s ease;
   padding-left: 16px;
+  background: var(--dropdown-hover);
+}
+
+.nav-link-dropdown.dropdown-open .mobile-submenu {
+  max-height: 500px;
 }
 
 .mobile-submenu a {
@@ -304,12 +374,19 @@ ul {
   font-size: 15px;
   font-weight: 500;
   border-bottom: 1px solid var(--chrome-granite-gray);
+  transition: color 0.15s;
+}
+
+.mobile-submenu a:hover {
+  color: var(--green-accent);
 }
 
 .mobile-donate-btn {
   margin-top: 24px;
   display: block;
   text-align: center;
+  position: sticky;
+  bottom: 20px;
 }
 
 /* ===== HERO SECTION ===== */
@@ -354,7 +431,6 @@ ul {
   gap: 8px;
   max-width: 900px;
   width: 100%;
-  text-align: center;
 }
 
 .hero-title {
@@ -443,10 +519,9 @@ ul {
 
 /* ===== OUR IMPACT SECTION ===== */
 .impact-section {
-  background: #1E5C14;
+  background: var(--impact-section-bg);
   padding: var(--section-padding);
   overflow: hidden;
-  position: relative;
 }
 
 .impact-inner {
@@ -550,15 +625,12 @@ ul {
   margin-bottom: 48px;
 }
 
-.wellness-offerings-header .section-heading {
-  margin-bottom: 8px;
-}
-
 .offerings-subtitle {
   font-family: var(--font-open-sans);
   font-size: 20px;
   color: var(--black);
   opacity: 0.75;
+  margin-top: 8px;
 }
 
 .offerings-grid {
@@ -567,7 +639,7 @@ ul {
   gap: 24px;
   max-width: 1512px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 var(--section-padding-x);
 }
 
 .offering-card {
@@ -576,6 +648,7 @@ ul {
   overflow: hidden;
   aspect-ratio: 4/3;
   cursor: pointer;
+  display: block;
 }
 
 .offering-card img {
@@ -689,12 +762,12 @@ ul {
 .site-footer {
   background: var(--footer-bg);
   color: var(--white);
-  padding: 64px 40px 32px;
+  padding: 64px var(--section-padding-x) 32px;
 }
 
 .footer-top {
   display: grid;
-  grid-template-columns: 180px 1fr;
+  grid-template-columns: 220px 1fr;
   gap: 64px;
   max-width: 1440px;
   margin: 0 auto 48px;
@@ -779,6 +852,11 @@ ul {
   font-weight: 500;
   color: var(--white);
   letter-spacing: -0.38px;
+  transition: opacity 0.2s;
+}
+
+.footer-email:hover {
+  opacity: 0.8;
 }
 
 .social-icons {
@@ -786,6 +864,7 @@ ul {
   justify-content: center;
   align-items: center;
   gap: 32px;
+  flex-wrap: wrap;
 }
 
 .social-icon img {
@@ -810,7 +889,6 @@ ul {
 
 /* ===== ABOUT PAGE ===== */
 
-/* About Hero */
 .about-hero {
   position: relative;
   min-height: 480px;
@@ -856,9 +934,9 @@ ul {
   border-radius: 4px;
 }
 
-/* Vision Statement Card */
+/* Vision Statement */
 .vision-section {
-  padding: 64px 40px;
+  padding: var(--section-padding);
   display: flex;
   justify-content: center;
 }
@@ -886,7 +964,7 @@ ul {
   font-weight: 700;
 }
 
-/* Story Sections — Alternating */
+/* Story Sections */
 .story-section {
   display: flex;
   align-items: stretch;
@@ -936,7 +1014,7 @@ ul {
   font-weight: 700;
 }
 
-/* Feature Cards (Team, Self-Care, DMV) */
+/* Feature Cards */
 .feature-card-section {
   display: flex;
   align-items: stretch;

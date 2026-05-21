@@ -1,539 +1,180 @@
-ITAVCollab Weebly Theme
+# ITAVCollab Weebly Theme
 
-A fully responsive, production-ready Weebly theme for It Takes A Village Collaborative — a community-centered integrative wellness nonprofit serving Prince George's County, Maryland, and the greater Washington, D.C. region.
+A fully responsive, production-ready Weebly theme for **It Takes A Village Collaborative** — a community-centered integrative wellness nonprofit serving Prince George's County, Maryland, and the greater Washington, D.C. region.
 
-Project Structure
+---
 
+## Project Structure
+
+```
 weebly-theme/
-├── index.html                    # Homepage (7 sections)
+├── index.tpl                     # Homepage (Weebly template)
+├── about.tpl                     # About page (Weebly template)
+├── page.tpl                      # Generic interior page template
+├── blog.tpl                      # Blog listing template
+├── post.tpl                      # Blog post template
+├── 404.tpl                       # 404 error page template
+├── partials/
+│   ├── header.tpl                # Shared header (icon bar + navbar + mobile menu)
+│   ├── navbar.tpl                # Desktop navbar component
+│   └── footer.tpl                # Shared footer
 ├── css/
-│   ├── variables.css            # Design tokens & CSS custom properties
-│   ├── main.css                 # Global styles & layout (810 lines)
-│   ├── components.css           # Reusable component styles (buttons, cards, etc.)
-│   └── responsive.css           # Mobile-first breakpoints (tablet, mobile)
+│   ├── variables.css             # Design tokens & CSS custom properties
+│   ├── main.css                  # Global styles, layout, all components (consolidated)
+│   ├── components.css            # Button & utility classes
+│   ├── responsive.css            # Mobile-first breakpoints
+│   ├── navbar.css                # DEPRECATED — consolidated into main.css
+│   └── mobile-menu.css           # DEPRECATED — consolidated into main.css
 ├── js/
-│   └── main.js                  # Mobile menu toggle, smooth scroll, interactions
+│   └── main.js                   # Mobile menu, smooth scroll, sticky nav
 ├── assets/
-│   ├── images/                  # Section background & feature images
-│   ├── icons/                   # SVG icons (social, UI controls)
-│   └── logos/                   # Brand logo & partner logos
-├── components/                  # Future reusable component snippets
-├── theme.json                   # Weebly theme metadata
-└── README.md                    # This file
-
-Features
-
-Homepage Sections (1–7)
-
-
-
-
-
-Icon Bar — Dark top bar with search, sign-in, cart icons
-
-
-
-Desktop Navbar — Sticky, responsive nav with dropdown menus + Donate button
-
-
-
-Hero Section — Full-width background image with semi-transparent text card & CTA
-
-
-
-Who We Are — Two-column layout (text + image), features brand story & "Learn More" button
-
-
-
-Our Impact — Dark green section with large "Our Impact" heading + 4 stat cards
-
-
-
-Centering Black Women & Justice-Impacted Communities — Two-column narrative + group image
-
-
-
-Integrative Wellness Hub Offerings — 3-column grid of image cards (Programs, Wellness Hub, Events)
-
-
-
-Become A Villager Keeper — Two-column layout with CTA for donations
-
-
-
-Our Partners — Partner logo grid with hover effects
-
-
-
-Footer — Dark background with 5-column nav, social icons, email, copyright
-
-Responsive Design
-
-
-
-
-
-Desktop (1200px+): Full design as shown in Figma
-
-
-
-Tablet (768px–1199px): Optimized 2–3 column layouts
-
-
-
-Mobile (max 767px): Single-column stacks, hamburger menu with dropdown accordions
-
-
-
-Small Mobile (max 480px): Further optimizations for ultra-compact screens
-
-Mobile Menu
-
-
-
-
-
-Hidden hamburger button on mobile
-
-
-
-Slide-out menu from right side with smooth animations
-
-
-
-Dropdown accordions for nested nav items
-
-
-
-Click overlay to close menu
-
-
-
-Smooth scroll on anchor links
-
-Accessibility
-
-
-
-
-
-Semantic HTML5 structure (nav, main, footer, sections)
-
-
-
-ARIA labels and roles for screen readers
-
-
-
-Keyboard-navigable dropdowns
-
-
-
-High contrast colors (WCAG AA compliant)
-
-
-
-Alt text on all images
-
-
-
-Logical focus order
-
-Design System
-
-Colors
-
-
-
-
-
-Primary Green: #29741D (brand accent, buttons, nav)
-
-
-
-Background: #FAFAFA (page bg)
-
-
-
-White: #FFF (cards, buttons)
-
-
-
-Dark: #1C1C1E (footer, text)
-
-
-
-Icon Bar: #2C2C2C
-
-
-
-Impact Section: #1E5C14
-
-Typography
-
-
-
-
-
-Headings / Nav / Buttons: Montserrat (weights: 400, 500, 600, 700)
-
-
-
-Body Text: Open Sans (weights: 400, 700)
-
-
-
-Both loaded from Google Fonts (no local font files required)
-
-Font Sizes:
-
-
-
-
-
-Hero Heading: 64px / 80px line-height
-
-
-
-H2 (Section): 40px / 65px line-height
-
-
-
-Body Text: 24px / 46px line-height
-
-
-
-CTA / Nav Links: 24px / 29px line-height
-
-
-
-Footer: 20px / 34px line-height
-
-Buttons
-
-
-
-
-
-Green Button: background: #29741D, white text, border-radius: 8px, padding: 28px 40px
-
-
-
-White Button: background: #FFF, green text, same padding
-
-
-
-Hover state: slight opacity reduction + subtle upward transform
-
-CSS Architecture
-
-variables.css
-
-
-
-
-
-All design tokens (colors, fonts, sizes, spacing)
-
-
-
-Consistent naming convention for reusability
-
-
-
-Easy to maintain and update globally
-
-main.css
-
-
-
-
-
-Global reset & base styles
-
-
-
-Layout containers & section structure
-
-
-
-Navbar, mobile menu, all hero/content sections
-
-
-
-Footer structure
-
-components.css
-
-
-
-
-
-Reusable button styles (.btn, .btn-green, .btn-white)
-
-
-
-Utility classes for text alignment, spacing
-
-responsive.css
-
-
-
-
-
-Mobile-first approach
-
-
-
-Tablet breakpoint: max-width 1199px
-
-
-
-Mobile breakpoint: max-width 767px
-
-
-
-Small mobile: max-width 480px
-
-JavaScript Interactivity
-
-js/main.js includes:
-
-
-
-
-
-Mobile Menu Toggle — Hamburger button opens/closes slide menu
-
-
-
-Mobile Overlay — Click outside menu to close
-
-
-
-Dropdown Accordions — Mobile nav dropdowns expand/collapse smoothly
-
-
-
-Smooth Scroll — Anchor links scroll smoothly to sections
-
-
-
-Sticky Navbar — Nav gains shadow on scroll (minor visual feedback)
-
-
-
-Accessibility — ARIA attributes for expanded states
-
-Asset Management
-
-All images and logos are referenced via Builder.io CDN URLs. To update:
-
-
-
-
-
-Replace image src attributes in HTML with your own URLs
-
-
-
-Organize images in assets/images/, assets/icons/, assets/logos/
-
-
-
-Update paths in HTML as needed
-
-Current placeholder assets:
-
-
-
-
-
-ITAVCollab Logo: https://api.builder.io/api/v1/image/assets/TEMP/fe7fd50eb9046da36f8b3e88562c6eae3e946081
-
-
-
-Social Icons (YouTube, Instagram, Facebook, TikTok, LinkedIn)
-
-
-
-Partner logos (9 organizations)
-
-
-
-Section images (community, centering, wellness, villager keeper)
-
-Future Pages
-
-Additional pages to implement:
-
-
-
-
-
-about.html — Team, mission, values, approach
-
-
-
-programs.html — Wellness initiatives, healing justice, organizational wellness, digital resources
-
-
-
-wellness-hub.html — Mental health, physical health, spiritual care
-
-
-
-contact.html — Contact form, location, hours
-
-Development & Deployment
-
-Local Development
-
-
-
-
-
-Open index.html in a modern browser
-
-
-
-Test responsiveness with DevTools (device emulation)
-
-
-
-Verify all links and interactive elements work
-
-Deploying to Weebly
-
-
-
-
-
-Export HTML, CSS, JS files to your Weebly site
-
-
-
-Upload assets (images, logos) to Weebly media library
-
-
-
-Update asset URLs in HTML to point to Weebly CDN
-
-
-
-Test all pages in live Weebly environment
-
-Performance Notes
-
-
-
-
-
-All images use loading="lazy" for deferred loading
-
-
-
-CSS is minimal and optimized (no unused styles)
-
-
-
-JavaScript is vanilla (no jQuery or heavy dependencies)
-
-
-
-Google Fonts are optimized with display=swap for performance
-
-Browser Support
-
-
-
-
-
-Chrome, Firefox, Safari, Edge (latest 2 versions)
-
-
-
-Responsive on all modern mobile browsers
-
-
-
-CSS Grid and Flexbox used throughout (modern layout)
-
-Accessibility Checklist
-
-
-
-
-
-✅ Semantic HTML5
-
-
-
-✅ ARIA labels (nav, buttons, icons)
-
-
-
-✅ Color contrast (WCAG AA)
-
-
-
-✅ Keyboard navigation (tab, enter)
-
-
-
-✅ Mobile menu accessible (screen readers)
-
-
-
-✅ Alt text on all images
-
-
-
-✅ Focus visible on interactive elements
-
-Customization Guide
-
-Change Brand Color
-
-Update in css/variables.css:
-
---green-accent: #29741D; /* Change this */
-
-Modify Font
-
-Update in css/variables.css or index.html <link> tag:
-
---font-montserrat: 'Your Font', sans-serif;
---font-open-sans: 'Your Font', sans-serif;
-
-Adjust Spacing
-
-All padding/gap values are in css/variables.css and css/responsive.css. Update --section-padding and --section-gap globally.
-
-Add New Sections
-
-
-
-
-
-Create new <section> in index.html
-
-
-
-Add .section-name class for styling
-
-
-
-Add corresponding CSS in main.css
-
-
-
-Add responsive styles in responsive.css if needed
-
-License
-
-© 2026 It Takes A Village Collaborative Inc. All rights reserved.
-
-
-
-Questions or issues? Contact info@itavcollab.org
+│   ├── images/                   # Section & hero images
+│   ├── icons/                    # SVG social & UI icons
+│   └── logos/                    # Brand logo & partner logos
+├── theme.json                    # Weebly theme manifest (valid schema)
+└── README.md
+```
+
+---
+
+## Weebly Installation
+
+### Method 1 — Theme ZIP Upload
+1. ZIP the entire project folder (excluding `.git`)
+2. In Weebly Editor → **Themes** → **Change Theme** → **Upload Theme**
+3. Upload the ZIP file
+4. Weebly will detect `theme.json` and install
+
+### Method 2 — Manual File Upload
+1. Upload all CSS/JS files via Weebly's File Manager
+2. Upload images to Weebly Media Library
+3. Update `{weebly_cdn}` paths to match your Weebly CDN URL
+
+---
+
+## Weebly Template Tags Used
+
+| Tag | Purpose |
+|-----|---------|
+| `{title}` | Page title |
+| `{page_description}` | Meta description |
+| `{head_content}` | Weebly-injected head scripts |
+| `{footer_content}` | Weebly-injected footer scripts |
+| `{content}` | Page body content |
+| `{weebly_cdn}` | CDN base URL for assets |
+| `{weebly_home_url}` | Site homepage URL |
+| `{page_url:slug}` | URL for a named page |
+| `{current_year}` | Current year (auto-updated) |
+| `{active_if:slug}` | Adds `nav-label--active` class on active page |
+| `{include file="..."}` | Partial template include |
+| `{blog_posts}` | Weebly blog post loop |
+
+---
+
+## CSS Architecture
+
+### `variables.css`
+All design tokens. Key fix: `--section-padding` is now properly split:
+```css
+--section-padding-y: 64px;
+--section-padding-x: 40px;
+--section-padding: var(--section-padding-y) var(--section-padding-x);
+```
+
+### `main.css`
+Single consolidated stylesheet. Includes:
+- Reset & base
+- Icon bar
+- Navbar (desktop + dropdowns)
+- Mobile menu
+- All page sections (Hero, Who We Are, Impact, Centering, Offerings, Villager Keeper, Partners, Footer)
+- About page components (hero, vision, story sections, feature cards)
+
+### `components.css`
+Reusable button classes: `.btn`, `.btn-green`, `.btn-white`, `.btn-outline-green`
+
+### `responsive.css`
+- Tablet: `max-width: 1199px`
+- Mobile: `max-width: 767px`
+- Small Mobile: `max-width: 480px`
+
+> `navbar.css` and `mobile-menu.css` are deprecated stubs — all styles consolidated into `main.css`.
+
+---
+
+## Design System
+
+### Colors
+| Token | Value | Usage |
+|-------|-------|-------|
+| `--green-accent` | `#29741D` | Primary brand, buttons, nav |
+| `--green-dark` | `#1E5C14` | Impact section background |
+| `--background` | `#FAFAFA` | Page background |
+| `--footer-bg` | `#1C1C1E` | Footer background |
+| `--icon-bar-bg` | `#2C2C2C` | Top icon bar |
+
+### Typography
+- **Headings / Nav / Buttons:** Montserrat (400, 500, 600, 700)
+- **Body Text:** Open Sans (400, 700)
+- Loaded via Google Fonts in `variables.css`
+
+### Buttons
+```html
+<a href="#" class="btn btn-green">Green Button</a>
+<a href="#" class="btn btn-white">White Button</a>
+```
+
+---
+
+## Asset Naming Convention
+
+### Images (`assets/images/`)
+| Filename | Used In |
+|----------|---------|
+| `hero-background.jpg` | Homepage hero |
+| `community-gathering.jpg` | Who We Are section |
+| `centering-community-group.jpg` | Centering section |
+| `offering-programs.jpg` | Offerings grid |
+| `offering-wellness-hub.jpg` | Offerings grid |
+| `offering-events.jpg` | Offerings grid |
+| `villager-keeper.jpg` | Villager Keeper section |
+| `about-hero-group-photo.jpg` | About page hero |
+| `about-founder-portrait.jpg` | About story section |
+| `about-sisters-movement.jpg` | About story section |
+| `about-community-dialogue.jpg` | About story section |
+| `about-wellness-session.jpg` | About story section |
+| `about-team-photo.jpg` | About feature card |
+| `about-self-care-session.jpg` | About feature card |
+| `about-dmv-wellness.jpg` | About feature card |
+
+### Icons (`assets/icons/`)
+`icon-youtube.svg`, `icon-instagram.svg`, `icon-facebook.svg`, `icon-tiktok.svg`, `icon-linkedin.svg`
+
+### Logos (`assets/logos/`)
+`itavcollab-logo.png`, `partner-confidence-you-services.png`, `partner-a-healthier-you.png`, `partner-my-community-clinic.png`, `partner-the-community-clinic.png`, `partner-lee.png`, `partner-mettie-works.png`, `partner-elevate-prince-georges.png`, `partner-vsc.png`, `partner-x-is-possible.png`
+
+---
+
+## Pages Status
+
+| Page | HTML | Weebly TPL | Status |
+|------|------|------------|--------|
+| Homepage | `index.html` | `index.tpl` | ✅ Complete |
+| About | `about.html` | `about.tpl` | ✅ Complete |
+| Programs | — | — | ⏳ Pending Figma |
+| Wellness Hub | — | — | ⏳ Pending Figma |
+| Generic Page | — | `page.tpl` | ✅ Stub ready |
+| Blog | — | `blog.tpl` | ✅ Stub ready |
+| Post | — | `post.tpl` | ✅ Stub ready |
+| 404 | — | `404.tpl` | ✅ Complete |
+
+---
+
+## Browser Support
+Chrome, Firefox, Safari, Edge (latest 2 versions). CSS Grid and Flexbox throughout.
+
+---
+
+## License
+© 2026 It Takes A Village Collaborative Inc. All rights reserved.  
+Questions? Contact [info@itavcollab.org](mailto:info@itavcollab.org)

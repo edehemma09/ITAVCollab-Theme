@@ -1,27 +1,54 @@
 {
-  "name": "ITAVCollab Theme",
+  "title": "ITAVCollab Theme",
   "author": "It Takes A Village Collaborative",
-  "version": "1.0.0",
-  "description": "Custom Weebly theme for It Takes A Village Collaborative — a community-centered integrative wellness nonprofit.",
-  "colors": {
-    "primary": "#29741D",
-    "background": "#FAFAFA",
-    "white": "#FFFFFF",
-    "black": "#000000",
-    "dark": "#1C1C1E"
-  },
-  "fonts": {
-    "heading": "Montserrat",
-    "body": "Open Sans"
-  },
-  "pages": [
-    "index.html",
-    "about.html",
-    "programs.html",
-    "wellness-hub.html"
+  "author_uri": "https://www.itavcollab.org",
+  "theme_version": "1.0.0",
+  "plugin_version": "4.0.0",
+  "preview_url": "",
+  "stylesheet": "css/main.css",
+  "color_palettes": [
+    {
+      "id": "default",
+      "name": "ITAVCollab Green",
+      "colors": [
+        "#29741D",
+        "#FAFAFA",
+        "#FFFFFF",
+        "#1C1C1E",
+        "#1E5C14"
+      ]
+    }
   ],
-  "weebly": {
-    "type": "theme",
-    "template_version": "1.0"
+  "font_sets": [
+    {
+      "id": "default",
+      "name": "Montserrat + Open Sans",
+      "headings": "Montserrat",
+      "body": "Open Sans"
+    }
+  ],
+  "theme_vars": {
+    "background-color": "#FAFAFA",
+    "primary-color": "#29741D",
+    "secondary-color": "#1E5C14",
+    "text-color": "#000000",
+    "heading-font": "Montserrat",
+    "body-font": "Open Sans"
+  },
+  "page_types": {
+    "home": "index.tpl",
+    "page": "page.tpl",
+    "blog": "blog.tpl",
+    "post": "post.tpl",
+    "store": "store.tpl",
+    "product": "product.tpl",
+    "checkout": "checkout.tpl",
+    "members": "members.tpl",
+    "404": "404.tpl"
+  },
+  "partials": {
+    "header": "partials/header.tpl",
+    "footer": "partials/footer.tpl",
+    "navbar": "partials/navbar.tpl"
   }
 }
