@@ -357,14 +357,14 @@ ul { list-style: none; }
 
 /* ===== ABOUT PAGE ===== */
 
-/* Hero — full-width photo, green label badge bottom-left */
+/* 1. HERO — full bleed, no side padding, image edge to edge */
 .about-hero {
   position: relative;
-  min-height: 420px;
+  min-height: 440px;
   overflow: hidden;
   display: flex;
   align-items: flex-end;
-  background: #4a6a3a;
+  background: #3a5a2a;
 }
 .about-hero-bg {
   position: absolute;
@@ -378,38 +378,39 @@ ul { list-style: none; }
 .about-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.05) 55%, transparent 100%);
+  background: linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 60%);
   z-index: 1;
 }
 .about-hero-content {
   position: relative;
   z-index: 2;
-  padding: 40px 64px;
+  padding: 32px 40px;
   width: 100%;
 }
 .about-hero-title {
   font-family: var(--font-montserrat);
-  font-size: 48px;
+  font-size: 40px;
   font-weight: 700;
   color: var(--white);
   line-height: 1.2;
   background: var(--green-accent);
   display: inline-block;
-  padding: 10px 28px;
+  padding: 8px 24px;
   border-radius: 4px;
+  margin: 0;
 }
 
-/* Vision card */
+/* 2. VISION CARD — centered, green border, no full bleed */
 .vision-section {
-  padding: 64px;
+  padding: 48px 40px;
   display: flex;
   justify-content: center;
 }
 .vision-card {
   border: 2px solid var(--green-accent);
   border-radius: 8px;
-  padding: 40px 56px;
-  max-width: 1000px;
+  padding: 32px 40px;
+  max-width: 980px;
   width: 100%;
   text-align: center;
 }
@@ -419,25 +420,29 @@ ul { list-style: none; }
   font-weight: 400;
   line-height: var(--line-height-body);
   color: var(--primary-text);
+  margin: 0;
 }
 .vision-text .vision-green {
   color: var(--green-accent);
   font-weight: 700;
 }
 
-/* Story sections — alternating image/text */
+/* 3. STORY SECTIONS — full bleed, no gaps between rows */
 .story-section {
   display: flex;
   align-items: stretch;
-  min-height: 360px;
-  overflow: hidden;
+  min-height: 340px;
+  margin: 0;
 }
-.story-section.reverse { flex-direction: row-reverse; }
+.story-section.reverse {
+  flex-direction: row-reverse;
+}
 
+/* Image col — 45% width, no border-radius, flush edges */
 .story-image-col {
-  flex: 0 0 44%;
+  flex: 0 0 45%;
   overflow: hidden;
-  background: #c8d8c0;
+  background: #b8c8b0;
 }
 .story-image-col img {
   width: 100%;
@@ -445,38 +450,45 @@ ul { list-style: none; }
   object-fit: cover;
   display: block;
 }
+
+/* Text col — 55%, internal padding only, centered vertically */
 .story-text-col {
   flex: 1;
-  padding: 64px;
+  padding: 48px 40px;
   display: flex;
   align-items: center;
   background: var(--background);
+  margin: 0;
 }
-.story-text-inner { max-width: 580px; }
+.story-text-inner {
+  width: 100%;
+  max-width: 560px;
+}
 .story-body {
   font-family: var(--font-open-sans);
   font-size: var(--size-body);
   font-weight: 400;
   line-height: var(--line-height-body);
   color: var(--primary-text);
+  margin: 0;
 }
 .story-body .story-green {
   color: var(--green-accent);
   font-weight: 700;
 }
 
-/* Feature cards */
+/* 4. FEATURE CARDS — image left, content right, 1px top border separator */
 .feature-card-section {
   display: flex;
   align-items: stretch;
-  min-height: 320px;
-  border-top: 1px solid var(--border-light);
-  overflow: hidden;
+  min-height: 300px;
+  border-top: 1px solid #e0e0e0;
+  margin: 0;
 }
 .feature-card-image {
-  flex: 0 0 44%;
+  flex: 0 0 45%;
   overflow: hidden;
-  background: #c8d8c0;
+  background: #b8c8b0;
 }
 .feature-card-image img {
   width: 100%;
@@ -486,7 +498,7 @@ ul { list-style: none; }
 }
 .feature-card-content {
   flex: 1;
-  padding: 64px;
+  padding: 48px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -498,8 +510,9 @@ ul { list-style: none; }
   font-size: var(--size-h2);
   font-weight: 700;
   color: var(--primary-text);
-  line-height: 1.25;
+  line-height: 1.2;
   letter-spacing: -0.019em;
+  margin: 0;
 }
 .feature-card-desc {
   font-family: var(--font-open-sans);
@@ -507,32 +520,36 @@ ul { list-style: none; }
   font-weight: 400;
   line-height: var(--line-height-body);
   color: var(--primary-text);
+  margin: 0;
 }
 
-/* About page responsive */
+/* ===== ABOUT PAGE RESPONSIVE ===== */
 @media (max-width: 1199px) {
-  .about-hero-title { font-size: 38px; }
-  .about-hero-content { padding: 32px 40px; }
-  .vision-section { padding: 48px 32px; }
-  .vision-card { padding: 32px 40px; }
-  .story-text-col { padding: 40px; }
-  .feature-card-content { padding: 40px; }
+  .about-hero { min-height: 360px; }
+  .about-hero-title { font-size: 34px; }
+  .about-hero-content { padding: 28px 32px; }
+  .vision-section { padding: 40px 32px; }
+  .vision-card { padding: 28px 32px; }
+  .story-text-col { padding: 40px 32px; }
+  .feature-card-content { padding: 40px 32px; }
   .feature-card-title { font-size: 28px; }
 }
+
 @media (max-width: 767px) {
-  .about-hero { min-height: 280px; }
-  .about-hero-title { font-size: 26px; padding: 8px 16px; }
-  .about-hero-content { padding: 24px 20px; }
-  .vision-section { padding: 36px 20px; }
-  .vision-card { padding: 20px 24px; }
+  .about-hero { min-height: 260px; }
+  .about-hero-title { font-size: 24px; padding: 6px 16px; }
+  .about-hero-content { padding: 20px; }
+  .vision-section { padding: 32px 20px; }
+  .vision-card { padding: 20px; }
   .vision-text { font-size: 17px; line-height: 30px; }
-  .story-section, .story-section.reverse { flex-direction: column; }
-  .story-image-col { flex: none; height: 240px; width: 100%; }
-  .story-text-col { padding: 28px 20px; }
-  .story-body { font-size: 17px; line-height: 30px; }
+  .story-section,
+  .story-section.reverse { flex-direction: column; }
+  .story-image-col { flex: none; height: 220px; width: 100%; }
+  .story-text-col { padding: 24px 20px; }
+  .story-body { font-size: 16px; line-height: 28px; }
   .feature-card-section { flex-direction: column; }
-  .feature-card-image { flex: none; height: 220px; width: 100%; }
-  .feature-card-content { padding: 28px 20px; gap: 14px; }
+  .feature-card-image { flex: none; height: 200px; width: 100%; }
+  .feature-card-content { padding: 24px 20px; gap: 12px; }
   .feature-card-title { font-size: 22px; }
   .feature-card-desc { font-size: 16px; line-height: 28px; }
 }
