@@ -140,7 +140,6 @@ ul { list-style: none; }
 
 /* ===== MOBILE MENU ===== */
 .mobile-menu {
-  display: none;
   flex-direction: column;
   background: var(--white);
   position: fixed;
@@ -152,16 +151,19 @@ ul { list-style: none; }
   padding: 80px 24px 120px;
   transition: right 0.3s ease;
   box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+  display: flex;
 }
 .mobile-menu.open { right: 0; }
 .mobile-overlay {
-  display: none;
+  display: block;
   position: fixed; inset: 0;
   background: rgba(0,0,0,0.4);
   z-index: calc(var(--z-mobile-menu) - 1);
-  opacity: 0; transition: opacity 0.3s;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
 }
-.mobile-overlay.visible { opacity: 1; }
+.mobile-overlay.visible { opacity: 1; pointer-events: all; }
 .mobile-menu-close { position: absolute; top: 20px; right: 20px; background: transparent; border: none; cursor: pointer; font-size: 28px; color: var(--green-accent); line-height: 1; }
 .mobile-nav-link { color: var(--green-accent); font-family: var(--font-montserrat); font-size: 18px; font-weight: 600; padding: 14px 0; border-bottom: 1px solid var(--chrome-granite-gray); display: flex; justify-content: space-between; align-items: center; width: 100%; background: transparent; border-top: none; border-left: none; border-right: none; cursor: pointer; }
 .nav-link-dropdown .mobile-nav-link svg { transition: transform 0.3s ease; }
@@ -232,7 +234,7 @@ ul { list-style: none; }
 }
 
 /* ===== WHO WE ARE ===== */
-.who-we-are-section { padding: var(--section-padding); overflow: hidden; }
+.who-we-are-section { padding: 64px; overflow: hidden; }
 .who-we-are-inner {
   display: flex; align-items: center;
   gap: var(--section-gap);
@@ -262,8 +264,11 @@ ul { list-style: none; }
 
 /* ===== OUR IMPACT ===== */
 .impact-section {
-  background: var(--green-dark);
-  padding: var(--section-padding);
+  background-image: url('../assets/images/hero-background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 64px;
   overflow: hidden;
 }
 .impact-inner {
@@ -279,23 +284,22 @@ ul { list-style: none; }
 }
 .impact-stats-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; flex: 1; }
 .stat-card {
-  background: rgba(255,255,255,0.15);
-  border: 1px solid rgba(255,255,255,0.3);
+  background: var(--white);
   border-radius: 8px; padding: 32px 28px;
   display: flex; flex-direction: column; gap: 8px;
 }
-.stat-number { font-family: var(--font-montserrat); font-size: 56px; font-weight: 700; color: var(--white); line-height: 1.1; }
-.stat-label { font-family: var(--font-open-sans); font-size: 20px; font-weight: 400; color: var(--white); line-height: 1.5; }
+.stat-number { font-family: var(--font-montserrat); font-size: 56px; font-weight: 700; color: var(--primary-text); line-height: 1.1; }
+.stat-label { font-family: var(--font-open-sans); font-size: 20px; font-weight: 400; color: var(--primary-text); line-height: 1.5; }
 
 /* ===== CENTERING SECTION ===== */
-.centering-section { padding: var(--section-padding); overflow: hidden; }
+.centering-section { padding: 64px; overflow: hidden; }
 .centering-inner { display: flex; align-items: center; gap: var(--section-gap); max-width: 1512px; margin: 0 auto; }
 .centering-content { flex: 1; display: flex; flex-direction: column; gap: 40px; }
 .centering-image { flex: 1; border-radius: 8px; overflow: hidden; min-height: 400px; }
 .centering-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
 
 /* ===== WELLNESS HUB OFFERINGS ===== */
-.wellness-offerings-section { padding: var(--section-padding); }
+.wellness-offerings-section { padding: 64px; }
 .wellness-offerings-header { text-align: center; margin-bottom: 48px; }
 .offerings-subtitle { font-family: var(--font-open-sans); font-size: 20px; color: var(--primary-text); opacity: 0.75; margin-top: 8px; }
 .offerings-grid {
@@ -317,14 +321,14 @@ ul { list-style: none; }
 }
 
 /* ===== VILLAGER KEEPER ===== */
-.villager-keeper-section { padding: var(--section-padding); overflow: hidden; }
+.villager-keeper-section { padding: 64px; overflow: hidden; }
 .villager-keeper-inner { display: flex; align-items: center; gap: var(--section-gap); max-width: 1512px; margin: 0 auto; }
 .villager-keeper-image { flex: 1; border-radius: 8px; overflow: hidden; min-height: 400px; }
 .villager-keeper-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
 .villager-keeper-content { flex: 1; display: flex; flex-direction: column; gap: 24px; }
 
 /* ===== OUR PARTNERS ===== */
-.partners-section { padding: var(--section-padding); text-align: center; }
+.partners-section { padding: 64px; text-align: center; }
 .partners-subtitle { font-family: var(--font-open-sans); font-size: 20px; color: var(--primary-text); opacity: 0.75; margin: 12px 0 48px; }
 .partners-grid { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px 60px; max-width: 1200px; margin: 0 auto 48px; }
 .partner-logo { display: flex; align-items: center; justify-content: center; }
@@ -332,7 +336,7 @@ ul { list-style: none; }
 .partner-logo img:hover { filter: grayscale(0%); }
 
 /* ===== FOOTER ===== */
-.site-footer { background: var(--footer-bg); color: var(--white); padding: 64px 64px 32px; }
+.site-footer { background: var(--footer-bg); color: var(--white); padding: 64px 64px 40px; }
 .footer-top { display: grid; grid-template-columns: 240px 1fr; gap: 64px; max-width: 1440px; margin: 0 auto 48px; align-items: flex-start; }
 .footer-logo-block { display: flex; flex-direction: column; gap: 20px; }
 .footer-logo { width: 100px; height: auto; }
@@ -397,7 +401,7 @@ ul { list-style: none; }
 
 /* Vision card */
 .vision-section {
-  padding: 56px 64px;
+  padding: 64px;
   display: flex;
   justify-content: center;
 }
@@ -443,7 +447,7 @@ ul { list-style: none; }
 }
 .story-text-col {
   flex: 1;
-  padding: 56px 64px;
+  padding: 64px;
   display: flex;
   align-items: center;
   background: var(--background);
@@ -482,7 +486,7 @@ ul { list-style: none; }
 }
 .feature-card-content {
   flex: 1;
-  padding: 48px 64px;
+  padding: 64px;
   display: flex;
   flex-direction: column;
   justify-content: center;

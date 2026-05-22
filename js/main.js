@@ -1,16 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  // ===== MOBILE MENU =====
   const hamburger = document.querySelector('.hamburger-btn');
   const mobileMenu = document.querySelector('.mobile-menu');
   const mobileOverlay = document.querySelector('.mobile-overlay');
-  const dropdownToggles = document.querySelectorAll('.nav-link-dropdown > .nav-link-text');
 
-  // Mobile menu toggle
+  function openMobileMenu() {
+    mobileMenu.classList.add('open');
+    mobileOverlay.classList.add('visible');
+    hamburger.classList.add('active');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('menu-open');
+  }
+
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    mobileOverlay.classList.remove('visible');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+  }
+
   if (hamburger && mobileMenu) {
     hamburger.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('open');
-      hamburger.setAttribute('aria-expanded', isOpen);
-      if (mobileOverlay) mobileOverlay.classList.toggle('visible', isOpen);
-      document.body.classList.toggle('menu-open', isOpen);
+      mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
     });
   }
 
@@ -18,17 +31,17 @@ document.addEventListener('DOMContentLoaded', () => {
     mobileOverlay.addEventListener('click', closeMobileMenu);
   }
 
-  function closeMobileMenu() {
-    if (mobileMenu) mobileMenu.classList.remove('open');
-    if (mobileOverlay) mobileOverlay.classList.remove('visible');
-    if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('menu-open');
+  const closeBtn = document.querySelector('.mobile-menu-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeMobileMenu);
   }
 
-  // Mobile accordion dropdowns
-  dropdownToggles.forEach(toggle => {
-    toggle.addEventListener('click', () => {
-      const parent = toggle.closest('.nav-link-dropdown');
+  // ===== MOBILE ACCORDION DROPDOWNS =====
+  // Select all mobile nav buttons that have a submenu
+  const dropdownBtns = document.querySelectorAll('.mobile-menu .nav-link-dropdown > button');
+  dropdownBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const parent = btn.closest('.nav-link-dropdown');
       const submenu = parent.querySelector('.mobile-submenu');
       if (!submenu) return;
       const isOpen = parent.classList.toggle('dropdown-open');
@@ -36,17 +49,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Desktop dropdowns (hover via CSS, but close on outside click)
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav-link-dropdown')) {
-      document.querySelectorAll('.nav-link-dropdown').forEach(d => d.classList.remove('hover-open'));
-    }
-  });
-
-  // Smooth scroll for anchor links
+  // ===== SMOOTH SCROLL =====
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
-      const target = document.querySelector(anchor.getAttribute('href'));
+      const href = anchor.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
         closeMobileMenu();
@@ -55,12 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Sticky navbar on scroll
+  // ===== STICKY NAVBAR SHADOW =====
   const navbar = document.querySelector('.site-navbar');
   if (navbar) {
-    const stickyOffset = navbar.offsetTop;
     window.addEventListener('scroll', () => {
       navbar.classList.toggle('scrolled', window.scrollY > 10);
     });
   }
+
 });
