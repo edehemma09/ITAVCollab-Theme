@@ -4,12 +4,13 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  padding: var(--btn-padding);
   border-radius: var(--btn-radius);
   font-family: var(--font-montserrat);
   font-size: var(--size-cta);
   font-weight: 700;
   line-height: var(--line-height-cta);
-  letter-spacing: -0.019em;
+  letter-spacing: -0.456px;
   cursor: pointer;
   border: none;
   text-decoration: none;
@@ -23,24 +24,32 @@
 }
 
 .btn:active {
-  opacity: 0.75;
   transform: translateY(0);
 }
 
-/* Green button — Active state: #29741D solid */
 .btn-green {
   background: var(--green-accent);
   color: var(--white);
-  padding: var(--btn-padding-green);
 }
 
-/* White button — Active state: white bg, green text */
 .btn-white {
   background: var(--white);
   color: var(--green-accent);
-  padding: var(--btn-padding-white);
 }
 
-/* ===== UTILITY ===== */
-.text-center { text-align: center; }
-.section-title-block { display: flex; flex-direction: column; gap: 8px; }
+.btn-outline-green {
+  background: transparent;
+  color: var(--green-accent);
+  border: 2px solid var(--green-accent);
+}
+
+/* ===== SECTION UTILITIES ===== */
+.text-center {
+  text-align: center;
+}
+
+.section-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

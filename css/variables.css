@@ -1,83 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;700&display=swap');
 
 :root {
-  /* ===== BRAND COLORS ===== */
+  /* Brand Colors */
   --green-accent: #29741D;
-  --green-dark: #1E5C14;
-  --gold-accent: #FAD228;
   --background: #FAFAFA;
-  --white: #FFFFFF;
-  --black: #000000;
-  --primary-text: #000000;
-  --secondary-text: #FFFFFF;
+  --white: #FFF;
+  --black: #000;
   --chrome-granite-gray: #F1F3F4;
+  --ios-macos-gray-dark: #1C1C1E;
   --chrome-raisin-black: #202124;
   --icon-bar-bg: #2C2C2C;
+  --impact-section-bg: #1E5C14;
   --footer-bg: #1C1C1E;
-  --overlay-dark: rgba(0, 0, 0, 0.50);
-  --border-light: #E8E8E8;
-  --dropdown-bg: #FFFFFF;
-  --dropdown-hover: #F5F5F5;
-  --dropdown-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  --overlay-dark: rgba(0, 0, 0, 0.40);
 
-  /* ===== TYPOGRAPHY — DESKTOP (1512px+) ===== */
+  /* Typography */
   --font-montserrat: 'Montserrat', -apple-system, Roboto, Helvetica, sans-serif;
   --font-open-sans: 'Open Sans', -apple-system, Roboto, Helvetica, sans-serif;
 
-  /* H1 Hero */
+  /* Font Sizes */
   --size-hero-heading: 64px;
   --line-height-hero-heading: 80px;
-
-  /* Hero Body */
-  --size-hero-body: 24px;
+  --size-hero-body-text: 24px;
   --line-height-hero-body: 46px;
-
-  /* H2 Paragraph Title */
   --size-h2: 40px;
   --line-height-h2: 65px;
-
-  /* H3 */
-  --size-h3: 32px;
-  --line-height-h3: 50px;
-
-  /* Body/Paragraph */
-  --size-body: 24px;
-  --line-height-body: 46px;
-  --paragraph-spacing: 16px;
-
-  /* CTA / Button */
+  --size-body-text: 24px;
+  --line-height-body-text: 46px;
   --size-cta: 24px;
   --line-height-cta: 29px;
-
-  /* Nav Link */
-  --size-nav: 24px;
-  --line-height-nav: 29px;
-
-  /* Footer Category Title */
-  --size-footer-cat: 20px;
-  --line-height-footer-cat: 34px;
-
-  /* Footer Sub-link */
+  --size-nav-link: 24px;
+  --line-height-nav-link: 29px;
+  --size-footer-category: 20px;
+  --line-height-footer-category: 34px;
   --size-footer-sub: 20px;
   --line-height-footer-sub: 34px;
 
-  /* ===== BUTTONS ===== */
-  /* White button: 304×85 */
-  --btn-padding-white: 28px 40px;
+  /* Spacing */
+  --section-padding: 64px;
+  --section-gap: 56px;
+  --btn-padding: 28px 40px;
   --btn-radius: 8px;
 
-  /* Green button */
-  --btn-padding-green: 28px 40px;
-
-  /* ===== SPACING ===== */
-  --section-padding-y: 64px;
-  --section-padding-x: 64px;
-  --section-padding: var(--section-padding-y) var(--section-padding-x);
-  --section-gap: 56px;
-
-  /* ===== SHADOWS & Z-INDEX ===== */
-  --nav-shadow: 0 3px 3px 0 rgba(0,0,0,0.25);
-  --z-navbar: 999;
-  --z-dropdown: 1000;
-  --z-mobile-menu: 1001;
+  /* Shadows */
+  --nav-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
 }
