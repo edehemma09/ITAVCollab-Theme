@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About ITAVCollab — It Takes A Village Collaborative</title>
-  <meta name="description" content="Learn about It Takes A Village Collaborative — founded by sisters Shoareged Phillpotts and Aishia Manley-Phillpotts to build healing, wellness, and community empowerment." />
+  <title>Our Impact — It Takes A Village Collaborative</title>
+  <meta name="description" content="Since 2019, ITAVCollab has served 1,500+ community members through integrative wellness programs, healing circles, and reentry support." />
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/components.css" />
@@ -26,10 +26,10 @@
       <a href="#" class="signin-link">Sign In</a>
       <button class="cart-btn" aria-label="Shopping cart">
         <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-          <g clip-path="url(#clip_cart_about)">
+          <g clip-path="url(#clip_cart_impact)">
             <path d="M1.33337 1.33334H6.66671L10.24 19.1867C10.362 19.8005 10.6959 20.3519 11.1834 20.7444C11.671 21.1369 12.281 21.3453 12.9067 21.3333H25.8667C26.4924 21.3453 27.1025 21.1369 27.59 20.7444C28.0775 20.3519 28.4114 19.8005 28.5334 19.1867L30.6667 8H8.00004M13.3334 28C13.3334 28.7364 12.7364 29.3333 12 29.3333C11.2637 29.3333 10.6667 28.7364 10.6667 28C10.6667 27.2636 11.2637 26.6667 12 26.6667C12.7364 26.6667 13.3334 27.2636 13.3334 28ZM28 28C28 28.7364 27.4031 29.3333 26.6667 29.3333C25.9303 29.3333 25.3334 28.7364 25.3334 28C25.3334 27.2636 25.9303 26.6667 26.6667 26.6667C27.4031 26.6667 28 27.2636 28 28Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </g>
-          <defs><clipPath id="clip_cart_about"><rect width="32" height="32" fill="white"/></clipPath></defs>
+          <defs><clipPath id="clip_cart_impact"><rect width="32" height="32" fill="white"/></clipPath></defs>
         </svg>
       </button>
     </div>
@@ -43,10 +43,10 @@
       </a>
       <ul class="nav-links" role="menubar">
         <li class="nav-link-item has-dropdown" role="none">
-          <a href="about.html" class="nav-label nav-label--active" role="menuitem" aria-haspopup="true" aria-current="page">About</a>
+          <a href="about.html" class="nav-label nav-label--active" role="menuitem" aria-haspopup="true">About</a>
           <svg class="dropdown-arrow" width="20" height="20" viewBox="0 0 30 29" fill="none" aria-hidden="true"><path d="M15 19L24 10H6L15 19Z" fill="#29741D"/></svg>
           <ul class="nav-dropdown" role="menu">
-            <li><a href="about.html#team" class="nav-dropdown-item" role="menuitem">Meet the Team</a></li>
+            <li><a href="meet-the-team.html" class="nav-dropdown-item" role="menuitem">Meet the Team</a></li>
             <li><a href="about.html#approach" class="nav-dropdown-item" role="menuitem">Our Approach</a></li>
             <li><a href="our-impact.html" class="nav-dropdown-item" role="menuitem">Our Impact</a></li>
           </ul>
@@ -96,7 +96,7 @@
         </li>
       </ul>
       <a href="index.html#donate" class="btn btn-green navbar-donate-btn">Donate</a>
-      <button class="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu-about">
+      <button class="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu-impact">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -104,7 +104,7 @@
 
   <!-- ===== MOBILE MENU ===== -->
   <div class="mobile-overlay" role="presentation"></div>
-  <div id="mobile-menu-about" class="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+  <div id="mobile-menu-impact" class="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
     <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
     <ul>
       <li class="nav-link-dropdown">
@@ -112,7 +112,7 @@
           <svg width="16" height="16" viewBox="0 0 30 29" fill="none" aria-hidden="true"><path d="M15 19L24 10H6L15 19Z" fill="#29741D"/></svg>
         </button>
         <ul class="mobile-submenu">
-          <li><a href="about.html#team">Meet the Team</a></li>
+          <li><a href="meet-the-team.html">Meet the Team</a></li>
           <li><a href="about.html#approach">Our Approach</a></li>
           <li><a href="our-impact.html">Our Impact</a></li>
         </ul>
@@ -169,175 +169,137 @@
   <!-- ===== MAIN CONTENT ===== -->
   <main id="main-content">
 
-    <!-- 1. ABOUT HERO — full-width photo, green label overlay bottom-left -->
-    <section class="about-hero" aria-label="About ITAVCollab">
-      <img
-        class="about-hero-bg"
-        src="assets/images/about-hero-group-photo.jpg"
-        alt="Four women in colorful outfits standing outdoors at ITAVCollab"
-      />
-      <div class="about-hero-overlay" aria-hidden="true"></div>
-      <div class="about-hero-content">
-        <h1 class="about-hero-title">About ITAVCollab</h1>
+    <!-- 1. HERO — full bleed photo, green badge bottom-left -->
+    <section class="impact-hero" aria-label="Our Impact">
+      <img class="impact-hero-bg" src="assets/images/impact-hero.jpg" alt="Community members seated outdoors in a circle at an ITAVCollab event" />
+      <div class="impact-hero-overlay" aria-hidden="true"></div>
+      <div class="impact-hero-content">
+        <h1 class="impact-hero-title">Our Impact</h1>
       </div>
     </section>
 
-    <!-- 2. VISION STATEMENT — bordered card, centered -->
-    <section class="vision-section" aria-label="Our Vision">
-      <div class="vision-card">
-        <p class="vision-text">
-          We envision a world of thriving communities where
-          <span class="vision-green">wellness is accessible,</span>
-          <span class="vision-green">culturally affirming,</span>
-          and <span class="vision-green">sustained across generations.</span>
-        </p>
+    <!-- 2. STATS GRID 1 — green topographic PNG background, white text -->
+    <section class="impact-stats-section-1" aria-label="Community Impact Statistics">
+      <div class="impact-stats-grid-1">
+
+        <!-- Large card — spans 2 rows -->
+        <div class="impact-stat-card-large">
+          <p class="isc-intro">Since 2019, we've served</p>
+          <p class="isc-number">1,500+</p>
+          <p class="isc-label">community members.</p>
+        </div>
+
+        <!-- 4 smaller cards — 2×2 grid right side -->
+        <div class="impact-stat-card-sm">
+          <p class="isc-number">80%+</p>
+          <p class="isc-label">participants are women of color</p>
+        </div>
+        <div class="impact-stat-card-sm">
+          <p class="isc-number">25%</p>
+          <p class="isc-label">participants are justice-impacted</p>
+        </div>
+        <div class="impact-stat-card-sm">
+          <p class="isc-number">50+</p>
+          <p class="isc-label">culturally competent practitioner partners</p>
+        </div>
+        <div class="impact-stat-card-sm">
+          <p class="isc-number">5,000+</p>
+          <p class="isc-label">national digital reach</p>
+        </div>
+
       </div>
     </section>
 
-    <!-- 3. STORY 1 — image left, text right -->
-    <section class="story-section" aria-label="Our Founding Story">
-      <div class="story-image-col">
-        <img
-          src="assets/images/about-founders.jpg"
-          alt="Portrait of ITAVCollab co-founders Shoareged Phillpotts and Aishia Manley-Phillpotts"
-          loading="lazy"
-        />
-      </div>
-      <div class="story-text-col">
-        <div class="story-text-inner">
-          <p class="story-body">
-            Founded in 2019, It Takes A Village Collaborative (ITAVCollab) was created by sisters
-            <span class="story-green">Shoareged Phillpotts and Aishia Manley-Phillpotts,</span>
-            whose Caribbean upbringing in Hyattsville, Maryland, instilled in them a deep
-            commitment to kinship, community care, and shared responsibility.
-          </p>
+    <!-- 3. YELLOW BANNER — "In the past 7 years, we've hosted:" -->
+    <div class="impact-banner-yellow" aria-label="In the past 7 years">
+      <p class="impact-banner-text">In the past 7 years, we've hosted:</p>
+    </div>
+
+    <!-- 4. STATS GRID 2 — yellow background, 3 cards -->
+    <section class="impact-stats-section-2" aria-label="Events and Programs Hosted">
+      <div class="impact-stats-grid-2">
+        <div class="impact-stat-card-yellow">
+          <p class="isc-number-dark">100+</p>
+          <p class="isc-label-dark">wellness events and healing circles</p>
+        </div>
+        <div class="impact-stat-card-yellow">
+          <p class="isc-number-dark">6</p>
+          <p class="isc-label-dark">intergenerational retreats</p>
+        </div>
+        <div class="impact-stat-card-yellow">
+          <p class="isc-number-dark">8</p>
+          <p class="isc-label-dark">returning citizen cohorts</p>
         </div>
       </div>
     </section>
 
-    <!-- 4. STORY 2 — text left, image right -->
-    <section class="story-section reverse" aria-label="The Movement">
-      <div class="story-image-col">
-        <img
-          src="assets/images/about-movement.jpg"
-          alt="Women in yellow and green jackets at an ITAVCollab event"
-          loading="lazy"
-        />
-      </div>
-      <div class="story-text-col">
-        <div class="story-text-inner">
-          <p class="story-body">
-            Raised with the belief that
-            <span class="story-green">"it takes a village" is more than a proverb—it is a practice</span>—the
-            sisters witnessed the challenges Black women face in navigating health and wellness
-            systems that often fail to acknowledge their lived experiences.
-            <span class="story-green">What began as a conversation between sisters quickly evolved into a movement.</span>
-          </p>
+    <!-- 5. GREEN BANNER — "Through our integrative wellness hub..." -->
+    <div class="impact-banner-green" aria-label="Through our wellness hub">
+      <p class="impact-banner-text-white">Through our integrative wellness hub of programs, holistic practices, and resources:</p>
+    </div>
+
+    <!-- 6. STATS GRID 3 — green topographic PNG background, white text, 3 cards -->
+    <section class="impact-stats-section-3" aria-label="Wellness Outcomes">
+      <div class="impact-stats-grid-3">
+        <div class="impact-stat-card-green">
+          <p class="isc-number">85%</p>
+          <p class="isc-label">of individuals adopted new wellness practices.</p>
+        </div>
+        <div class="impact-stat-card-green">
+          <p class="isc-number">0%</p>
+          <p class="isc-label">recidivism rate among reentry cohort participants.</p>
+        </div>
+        <div class="impact-stat-card-green">
+          <p class="isc-number">80%</p>
+          <p class="isc-label">of programming offered at no cost.</p>
         </div>
       </div>
     </section>
 
-    <!-- 5. STORY 3 — image left, text right -->
-    <section class="story-section" aria-label="Our Mission">
-      <div class="story-image-col">
-        <img
-          src="assets/images/about-community-dialogue.jpg"
-          alt="Community members gathered at an indoor ITAVCollab listening session"
-          loading="lazy"
-        />
+    <!-- 7. TESTIMONIAL SLIDER — full-width photo bg, gold card, quote, dots -->
+    <section class="impact-testimonial" aria-label="Community Testimonial">
+      <div class="testimonial-bg">
+        <img src="assets/images/impact-testimonial-bg.jpg" alt="Community wellness event" loading="lazy" />
+        <div class="testimonial-overlay" aria-hidden="true"></div>
       </div>
-      <div class="story-text-col">
-        <div class="story-text-inner">
-          <p class="story-body">
-            Through dialogue circles and community listening sessions, Shoareged and Aishia heard
-            recurring stories of burnout, generational fatigue, and a lack of culturally relevant
-            resources for healing and self-care.
-            <br/><br/>
-            These experiences helped shape ITAVCollab's mission:
-            <span class="story-green">to close critical gaps in holistic wellness services</span>
-            and ensure that community members—across generations—have
-            <span class="story-green">access to the mental, emotional, and physical support they deserve.</span>
-          </p>
+      <div class="testimonial-slider" role="region" aria-label="Testimonials">
+        <button class="testimonial-arrow testimonial-arrow-left" aria-label="Previous testimonial">&#8592;</button>
+        <div class="testimonial-card">
+          <blockquote class="testimonial-quote">
+            "I WENT IN EXCITED WANTING TO LEARN MORE AND JUST FIND SOME PEACE. I LEFT WITH A NEW OUTLOOK ON LIFE. I'VE BEEN USING ALL THE TECHNIQUES FROM MIND, BODY, AND SOUL. IT REALLY HELPS A LOT."
+          </blockquote>
+          <p class="testimonial-name">Kimberly P.</p>
         </div>
+        <button class="testimonial-arrow testimonial-arrow-right" aria-label="Next testimonial">&#8594;</button>
+      </div>
+      <div class="testimonial-dots" aria-label="Testimonial navigation">
+        <span class="testimonial-dot active"></span>
+        <span class="testimonial-dot"></span>
+        <span class="testimonial-dot"></span>
+        <span class="testimonial-dot"></span>
       </div>
     </section>
 
-    <!-- 6. STORY 4 — text left, image right -->
-    <section id="impact" class="story-section reverse" aria-label="Our Impact Today">
-      <div class="story-image-col">
-        <img
-          src="assets/images/about-wellness-session.jpg"
-          alt="Women in a bright indoor wellness space at ITAVCollab"
-          loading="lazy"
-        />
+    <!-- 8. NEWSLETTER — centered, white bg -->
+    <section class="impact-newsletter" aria-label="Read the Village Newsletter">
+      <div class="impact-newsletter-inner">
+        <h2 class="impact-newsletter-heading">Read the Village Newsletter</h2>
+        <p class="impact-newsletter-body">Keep up with It Takes A Village Collaborative and our ongoing impact on the community by reading our quarterly newsletter.</p>
+        <a href="#newsletter" class="btn btn-green">Go to Newsletter</a>
       </div>
-      <div class="story-text-col">
-        <div class="story-text-inner">
-          <p class="story-body">
-            Today, ITAVCollab serves as a trusted wellness hub for residents of Prince George's
-            County, MD, and Washington, DC. We bring together practitioners, healers, educators, and
-            community leaders to
-            <span class="story-green">provide trauma informed, culturally grounded offerings that center Black women and those justice impacted.</span>
-            <br/><br/>
-            Our vision is bold yet deeply rooted:
-            <span class="story-green">to build thriving historically resilient communities by nurturing wellness as a collective, intergenerational right and legacy.</span>
-          </p>
+    </section>
+
+    <!-- 9. RESULTS THROUGH APPROACH — image left, text right -->
+    <section class="impact-approach" aria-label="Results Through Approach">
+      <div class="impact-approach-inner">
+        <div class="impact-approach-image">
+          <img src="assets/images/impact-approach.jpg" alt="Two women at an ITAVCollab approach session" loading="lazy" />
         </div>
-      </div>
-    </section>
-
-    <!-- 7. FEATURE CARD — The ITAVCollab Team -->
-    <section id="team" class="feature-card-section" aria-label="The ITAVCollab Team">
-      <div class="feature-card-image">
-        <img
-          src="assets/images/about-team-photo.jpg"
-          alt="The ITAVCollab team in colorful outfits"
-          loading="lazy"
-        />
-      </div>
-      <div class="feature-card-content">
-        <h2 class="feature-card-title">The ITAVCollab Team</h2>
-        <p class="feature-card-desc">
-          Meet the team that's actively working to bring holistic wellness and healing to
-          historically resilient communities.
-        </p>
-        <a href="meet-the-team.html" class="btn btn-green">Meet the Team</a>
-      </div>
-    </section>
-
-    <!-- 8. FEATURE CARD — Self-Care Beyond the Surface -->
-    <section id="approach" class="feature-card-section" aria-label="Self-Care Beyond the Surface">
-      <div class="feature-card-image">
-        <img
-          src="assets/images/about-self-care.jpg"
-          alt="Women seated at a table at an ITAVCollab self-care session"
-          loading="lazy"
-        />
-      </div>
-      <div class="feature-card-content">
-        <h2 class="feature-card-title">Self-Care Beyond the Surface&#8482;</h2>
-        <p class="feature-card-desc">
-          Learn about our approach to solving systemic inequities in health care and wellness.
-        </p>
-        <a href="about.html#approach-detail" class="btn btn-green">Learn Our Approach</a>
-      </div>
-    </section>
-
-    <!-- 9. FEATURE CARD — Bringing Wellness to the DMV -->
-    <section class="feature-card-section" aria-label="Bringing Wellness to the DMV">
-      <div class="feature-card-image">
-        <img
-          src="assets/images/about-dmv-wellness.jpg"
-          alt="Women by a bright window in a DMV area wellness space"
-          loading="lazy"
-        />
-      </div>
-      <div class="feature-card-content">
-        <h2 class="feature-card-title">Bringing Wellness to the DMV</h2>
-        <p class="feature-card-desc">
-          Discover how ITAVCollab has made an impact in Prince George's County and Washington, D.C.
-        </p>
-        <a href="our-impact.html" class="btn btn-green">Discover Our Impact</a>
+        <div class="impact-approach-content">
+          <h2 class="impact-approach-heading">Results Through Approach</h2>
+          <p class="impact-approach-body">Learn about our approach that heals individuals and transforms systems.</p>
+          <a href="about.html#approach" class="btn btn-green">Our Approach</a>
+        </div>
       </div>
     </section>
 

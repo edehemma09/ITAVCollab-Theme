@@ -1,3 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap');
+
+:root {
+  /* ===== BRAND COLORS ===== */
+  --green-accent: #29741D;
+  --green-dark: #1E5C14;
+  --gold-accent: #FAD228;
+  --background: #FAFAFA;
+  --white: #FFFFFF;
+  --black: #000000;
+  --primary-text: #000000;
+  --secondary-text: #FFFFFF;
+  --chrome-granite-gray: #F1F3F4;
+  --chrome-raisin-black: #202124;
+  --icon-bar-bg: #2C2C2C;
+  --footer-bg: #1C1C1E;
+  --overlay-dark: rgba(0, 0, 0, 0.50);
+  --border-light: #E8E8E8;
+  --dropdown-bg: #FFFFFF;
+  --dropdown-hover: #F5F5F5;
+  --dropdown-shadow: 0 8px 24px rgba(0,0,0,0.12);
+
+  /* ===== TYPOGRAPHY — DESKTOP (1512px+) ===== */
+  --font-montserrat: 'Montserrat', -apple-system, Roboto, Helvetica, sans-serif;
+  --font-open-sans: 'Open Sans', -apple-system, Roboto, Helvetica, sans-serif;
+
+  /* H1 Hero */
+  --size-hero-heading: 64px;
+  --line-height-hero-heading: 80px;
+
+  /* Hero Body */
+  --size-hero-body: 24px;
+  --line-height-hero-body: 46px;
+
+  /* H2 Paragraph Title */
+  --size-h2: 40px;
+  --line-height-h2: 65px;
+
+  /* H3 */
+  --size-h3: 32px;
+  --line-height-h3: 50px;
+
+  /* Body/Paragraph */
+  --size-body: 24px;
+  --line-height-body: 46px;
+  --paragraph-spacing: 16px;
+
+  /* CTA / Button */
+  --size-cta: 24px;
+  --line-height-cta: 29px;
+
+  /* Nav Link */
+  --size-nav: 24px;
+  --line-height-nav: 29px;
+
+  /* Footer Category Title */
+  --size-footer-cat: 20px;
+  --line-height-footer-cat: 34px;
+
+  /* Footer Sub-link */
+  --size-footer-sub: 20px;
+  --line-height-footer-sub: 34px;
+
+  /* ===== BUTTONS ===== */
+  /* White button: 304×85 */
+  --btn-padding-white: 28px 40px;
+  --btn-radius: 8px;
+
+  /* Green button */
+  --btn-padding-green: 28px 40px;
+
+  /* ===== SPACING ===== */
+  --section-padding-y: 64px;
+  --section-padding-x: 64px;
+  --section-padding: var(--section-padding-y) var(--section-padding-x);
+  --section-gap: 56px;
+
+  /* ===== SHADOWS & Z-INDEX ===== */
+  --nav-shadow: 0 3px 3px 0 rgba(0,0,0,0.25);
+  --z-navbar: 999;
+  --z-dropdown: 1000;
+  --z-mobile-menu: 1001;
+}
 @import url('variables.css');
 
 /* ===== RESET & BASE ===== */
@@ -264,7 +347,7 @@ ul { list-style: none; }
 
 /* ===== OUR IMPACT ===== */
 .impact-section {
-  background-image: url('../assets/images/hero-background.png');
+  background-image: url('hero-background.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -807,445 +890,345 @@ ul { list-style: none; }
 @media (max-width: 480px) {
   .board-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
-/* ===== OUR IMPACT PAGE ===== */
-
-/* 1. HERO */
-.impact-hero {
-  position: relative;
-  min-height: 380px;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  background: #3a5a2a;
-}
-.impact-hero-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  z-index: 0;
-}
-.impact-hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 60%);
-  z-index: 1;
-}
-.impact-hero-content {
-  position: relative;
-  z-index: 2;
-  padding: 32px 40px;
-  width: 100%;
-}
-.impact-hero-title {
-  font-family: var(--font-montserrat);
-  font-size: 40px;
-  font-weight: 700;
-  color: var(--white);
-  line-height: 1.2;
-  background: var(--green-accent);
-  display: inline-block;
-  padding: 8px 24px;
-  border-radius: 4px;
-  margin: 0;
-}
-
-/* 2. STATS GRID 1 — green topographic PNG bg, white text */
-.impact-stats-section-1 {
-  background-image: url('../assets/images/hero-background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 32px 40px;
-}
-.impact-stats-grid-1 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 16px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-/* Large card spans 2 rows on the left */
-.impact-stat-card-large {
-  grid-column: 1;
-  grid-row: 1 / 3;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 8px;
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 4px;
-}
-/* 4 smaller cards — 2 columns × 2 rows on the right */
-.impact-stat-card-sm {
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 8px;
-  padding: 24px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.isc-intro {
-  font-family: var(--font-open-sans);
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--white);
-  margin: 0;
-  line-height: 1.4;
-}
-.isc-number {
-  font-family: var(--font-montserrat);
-  font-size: 56px;
-  font-weight: 700;
-  color: var(--white);
-  line-height: 1.1;
-  margin: 0;
-}
-.isc-label {
-  font-family: var(--font-open-sans);
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--white);
-  line-height: 1.4;
-  margin: 0;
-}
-
-/* 3. YELLOW BANNER */
-.impact-banner-yellow {
-  background-color: var(--gold-accent);
-  background-image: url('../assets/images/hero-background.png');
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: multiply;
-  padding: 20px 40px;
-  text-align: center;
-}
-.impact-banner-text {
-  font-family: var(--font-open-sans);
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--primary-text);
-  margin: 0;
-  line-height: 1.4;
-}
-
-/* 4. STATS GRID 2 — yellow bg, dark text, 3 cards */
-.impact-stats-section-2 {
-  background-color: var(--gold-accent);
-  padding: 32px 40px;
-}
-.impact-stats-grid-2 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.impact-stat-card-yellow {
-  background: var(--gold-accent);
-  border: 1px solid rgba(0,0,0,0.1);
-  border-radius: 8px;
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.isc-number-dark {
-  font-family: var(--font-montserrat);
-  font-size: 56px;
-  font-weight: 700;
-  color: var(--primary-text);
-  line-height: 1.1;
-  margin: 0;
-}
-.isc-label-dark {
-  font-family: var(--font-open-sans);
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--primary-text);
-  line-height: 1.4;
-  margin: 0;
-}
-
-/* 5. GREEN BANNER */
-.impact-banner-green {
-  background-image: url('../assets/images/hero-background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 20px 40px;
-  text-align: center;
-}
-.impact-banner-text-white {
-  font-family: var(--font-open-sans);
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--white);
-  margin: 0;
-  line-height: 1.4;
-}
-
-/* 6. STATS GRID 3 — green topographic PNG bg, white text, 3 cards */
-.impact-stats-section-3 {
-  background-image: url('../assets/images/hero-background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 32px 40px;
-}
-.impact-stats-grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.impact-stat-card-green {
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 8px;
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-/* 7. TESTIMONIAL SLIDER */
-.impact-testimonial {
-  position: relative;
-  min-height: 420px;
-  display: flex;
-  flex-direction: column;
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-}
-.testimonial-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-.testimonial-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.testimonial-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-}
-.testimonial-slider {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  padding: 40px;
-  max-width: 900px;
-  width: 100%;
-}
-.testimonial-card {
-  background: var(--gold-accent);
-  border-radius: 4px;
-  padding: 40px 48px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.testimonial-quote {
+  gap: 10px;
+  border-radius: var(--btn-radius);
   font-family: var(--font-montserrat);
-  font-size: 18px;
+  font-size: var(--size-cta);
   font-weight: 700;
-  color: var(--primary-text);
-  line-height: 1.6;
-  margin: 0;
-  font-style: normal;
-  text-transform: uppercase;
-}
-.testimonial-name {
-  font-family: var(--font-open-sans);
-  font-size: 16px;
-  font-weight: 400;
-  color: var(--primary-text);
-  margin: 0;
-}
-.testimonial-arrow {
-  background: transparent;
+  line-height: var(--line-height-cta);
+  letter-spacing: -0.019em;
+  cursor: pointer;
   border: none;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  opacity: 0.75;
+  transform: translateY(0);
+}
+
+/* Green button — Active state: #29741D solid */
+.btn-green {
+  background: var(--green-accent);
   color: var(--white);
-  font-size: 28px;
-  cursor: pointer;
-  flex-shrink: 0;
-  padding: 8px;
-  line-height: 1;
-  z-index: 1;
-}
-.testimonial-dots {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  gap: 8px;
-  padding-bottom: 24px;
-}
-.testimonial-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.5);
-  cursor: pointer;
-  display: block;
-}
-.testimonial-dot.active {
-  background: var(--gold-accent);
+  padding: var(--btn-padding-green);
 }
 
-/* 8. NEWSLETTER */
-.impact-newsletter {
-  padding: 56px 40px;
+/* White button — Active state: white bg, green text */
+.btn-white {
   background: var(--white);
-  text-align: center;
-}
-.impact-newsletter-inner {
-  max-width: 680px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-.impact-newsletter-heading {
-  font-family: var(--font-montserrat);
-  font-size: var(--size-h2);
-  font-weight: 700;
-  color: var(--primary-text);
-  line-height: var(--line-height-h2);
-  margin: 0;
-}
-.impact-newsletter-body {
-  font-family: var(--font-open-sans);
-  font-size: var(--size-body);
-  font-weight: 400;
-  color: var(--primary-text);
-  line-height: var(--line-height-body);
-  margin: 0;
+  color: var(--green-accent);
+  padding: var(--btn-padding-white);
 }
 
-/* 9. RESULTS THROUGH APPROACH */
-.impact-approach {
-  padding: 0;
-  overflow: hidden;
+/* ===== UTILITY ===== */
+.text-center { text-align: center; }
+.section-title-block { display: flex; flex-direction: column; gap: 8px; }
+/* ===== RESPONSIVE — ITAVCollab Theme ===== */
+
+/* ===== TABLET: max 1199px ===== */
+@media (max-width: 1199px) {
+  :root {
+    --section-padding-y: 48px;
+    --section-padding-x: 32px;
+    --section-padding: var(--section-padding-y) var(--section-padding-x);
+    --section-gap: 40px;
+    /* Tablet typography — image2 scale */
+    --size-hero-heading: 48px;
+    --line-height-hero-heading: 59px;
+    --size-hero-body: 20px;
+    --line-height-hero-body: 39px;
+    --size-h2: 32px;
+    --line-height-h2: 51px;
+    --size-h3: 28px;
+    --line-height-h3: 34px;
+    --size-body: 20px;
+    --line-height-body: 39px;
+    --size-cta: 20px;
+    --line-height-cta: 24px;
+    --size-nav: 16px;
+    --line-height-nav: 22px;
+    --size-footer-cat: 16px;
+    --line-height-footer-cat: 27px;
+    --size-footer-sub: 16px;
+    --line-height-footer-sub: 27px;
+    --btn-padding-green: 20px 28px;
+    --btn-padding-white: 20px 28px;
+  }
+
+  .navbar-inner { padding: 12px 24px; }
+  .navbar-logo img { width: 56px; height: 56px; }
+  .impact-heading { font-size: 52px; }
+  .stat-number { font-size: 40px; }
+  .footer-top { grid-template-columns: 160px 1fr; gap: 40px; }
+  .footer-nav-grid { grid-template-columns: repeat(3,1fr); }
+  .hero-section { padding: 60px 32px; min-height: 520px; }
+  .hero-text-card { padding: 24px 32px; }
 }
-.impact-approach-inner {
+
+/* ===== MOBILE: max 767px ===== */
+@media (max-width: 767px) {
+  :root {
+    --section-padding-y: 40px;
+    --section-padding-x: 20px;
+    --section-padding: var(--section-padding-y) var(--section-padding-x);
+    --section-gap: 28px;
+  }
+
+  .nav-links, .navbar-donate-btn { display: none; }
+  .hamburger-btn { display: flex; }
+
+  .navbar-logo img { width: 48px; height: 48px; }
+  .navbar-inner { padding: 10px 20px; }
+  .icon-bar { padding: 8px 16px; }
+  .signin-link { font-size: 14px; }
+
+  .hero-section { min-height: 420px; padding: 40px 20px; }
+  .hero-title { font-size: 28px; line-height: 38px; }
+  .hero-subtitle { font-size: 16px; line-height: 28px; }
+  .hero-text-card { padding: 18px 20px; }
+
+  .who-we-are-inner, .centering-inner, .villager-keeper-inner { flex-direction: column; }
+  .who-we-are-image, .centering-image, .villager-keeper-image { min-height: 260px; width: 100%; }
+
+  .section-heading { font-size: 24px; line-height: 36px; }
+  .section-body { font-size: 17px; line-height: 30px; }
+
+  .impact-inner { flex-direction: column; gap: 28px; }
+  .impact-heading { font-size: 44px; text-align: center; }
+  .impact-stats-grid { grid-template-columns: repeat(2,1fr); gap: 12px; width: 100%; }
+  .stat-number { font-size: 32px; }
+  .stat-label { font-size: 14px; }
+  .stat-card { padding: 18px 14px; }
+
+  .offerings-grid { grid-template-columns: 1fr; gap: 16px; }
+  .offering-card { aspect-ratio: 16/9; }
+
+  .partners-grid { gap: 24px 28px; }
+  .partner-logo img { max-height: 56px; max-width: 120px; }
+
+  .footer-top { grid-template-columns: 1fr; gap: 28px; }
+  .footer-nav-grid { grid-template-columns: repeat(2,1fr); gap: 20px; }
+  .footer-logo-block { align-items: center; text-align: center; }
+  .footer-mission { text-align: center; }
+  .social-icons { gap: 16px; }
+  .social-icon img { height: 32px; }
+  .footer-copyright { font-size: 13px; }
+  .footer-email { font-size: 15px; }
+
+  /* About page */
+  .about-hero { min-height: 280px; }
+  .about-hero-title { font-size: 26px; padding: 6px 14px; }
+  .about-hero-content { padding: 28px 20px; }
+  .vision-card { padding: 20px; }
+  .vision-text { font-size: 16px; line-height: 30px; }
+  .story-section, .story-section.reverse { flex-direction: column; }
+  .story-image-col { flex: none; height: 220px; width: 100%; }
+  .story-text-col { padding: 28px 20px; }
+  .story-body { font-size: 15px; line-height: 27px; }
+  .feature-card-section { flex-direction: column; }
+  .feature-card-image { flex: none; height: 200px; width: 100%; }
+  .feature-card-content { padding: 28px 20px; gap: 14px; }
+  .feature-card-title { font-size: 22px; }
+  .feature-card-desc { font-size: 15px; line-height: 26px; }
+}
+
+/* ===== SMALL MOBILE: max 480px ===== */
+@media (max-width: 480px) {
+  .impact-stats-grid { grid-template-columns: 1fr; }
+  .footer-nav-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 24px; line-height: 32px; }
+  .section-heading { font-size: 22px; }
+}
+
+/* ===== WEEBLY MENU INTEGRATION ===== */
+/* Weebly outputs %%MENU%% as <ul class="wsite-menu-default"> */
+/* We style it to match our navbar design exactly */
+
+.weebly-nav-wrapper {
+  flex: 1;
   display: flex;
-  align-items: stretch;
-  min-height: 320px;
+  justify-content: center;
 }
-.impact-approach-image {
-  flex: 0 0 40%;
-  overflow: hidden;
-  background: #b8c8b0;
+
+/* Desktop nav from %%MENU%% */
+.weebly-nav-wrapper .wsite-menu-default {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
 }
-.impact-approach-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.weebly-nav-wrapper .wsite-menu-default > li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+}
+.weebly-nav-wrapper .wsite-menu-default > li > a {
+  color: #29741D;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 29px;
+  letter-spacing: -0.019em;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.weebly-nav-wrapper .wsite-menu-default > li > a:hover {
+  opacity: 0.75;
+}
+/* Active page link */
+.weebly-nav-wrapper .wsite-menu-default > li#active > a,
+.weebly-nav-wrapper .wsite-menu-default > li.active > a {
+  border-bottom: 2px solid #29741D;
+}
+/* Weebly dropdown arrow */
+.weebly-nav-wrapper .wsite-menu-default > li.haschildren > a::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #29741D;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+/* Weebly sub-menu dropdown */
+.weebly-nav-wrapper .wsite-menu-default > li .wsite-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 0;
+  background: #ffffff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border: 1px solid #E8E8E8;
+  border-top: none;
+  min-width: 210px;
+  z-index: 1000;
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+}
+.weebly-nav-wrapper .wsite-menu-default > li:hover .wsite-menu {
   display: block;
 }
-.impact-approach-content {
-  flex: 1;
-  padding: 48px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 16px;
-  background: var(--background);
+.weebly-nav-wrapper .wsite-menu-default li .wsite-menu li a {
+  display: block;
+  padding: 12px 24px;
+  color: #202124;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
 }
-.impact-approach-heading {
-  font-family: var(--font-montserrat);
-  font-size: var(--size-h2);
+.weebly-nav-wrapper .wsite-menu-default li .wsite-menu li a:hover {
+  background: #F5F5F5;
+  color: #29741D;
+}
+
+/* Mobile menu — Weebly nav repeated */
+.mobile-menu-nav .wsite-menu-default {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.mobile-menu-nav .wsite-menu-default > li {
+  border-bottom: 1px solid #F1F3F4;
+}
+.mobile-menu-nav .wsite-menu-default > li > a {
+  display: block;
+  padding: 14px 0;
+  color: #29741D;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.mobile-menu-nav .wsite-menu-default li .wsite-menu {
+  list-style: none;
+  padding: 0 0 0 16px;
+  margin: 0;
+  background: #F5F5F5;
+}
+.mobile-menu-nav .wsite-menu-default li .wsite-menu li a {
+  display: block;
+  padding: 10px 0;
+  color: #202124;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid #F1F3F4;
+}
+
+/* Weebly content area */
+.wsite-content-main {
+  min-height: 400px;
+}
+
+/* Weebly drag-drop element base styles */
+.wsite-content-main .wsite-section {
+  width: 100%;
+}
+.wsite-content-main .wsite-section-content {
+  max-width: 1512px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Weebly default element styles — ensure they inherit our fonts */
+.wsite-content-main h1,
+.wsite-content-main h2,
+.wsite-content-main h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+.wsite-content-main p,
+.wsite-content-main li,
+.wsite-content-main span {
+  font-family: 'Open Sans', sans-serif;
+}
+.wsite-content-main a {
+  color: #29741D;
+}
+
+/* Weebly button elements */
+.wsite-content-main .wsite-button .wsite-button-inner {
+  background: #29741D;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  color: var(--primary-text);
-  line-height: var(--line-height-h2);
-  margin: 0;
-}
-.impact-approach-body {
-  font-family: var(--font-open-sans);
-  font-size: var(--size-body);
-  font-weight: 400;
-  color: var(--primary-text);
-  line-height: var(--line-height-body);
-  margin: 0;
+  border-radius: 8px;
+  padding: 14px 28px;
 }
 
-/* ===== IMPACT PAGE RESPONSIVE ===== */
-@media (max-width: 1199px) {
-  .impact-hero-title { font-size: 34px; }
-  .impact-hero-content { padding: 28px 32px; }
-  .impact-stats-section-1,
-  .impact-stats-section-2,
-  .impact-stats-section-3 { padding: 24px 32px; }
-  .impact-banner-yellow,
-  .impact-banner-green { padding: 18px 32px; }
-  .isc-number { font-size: 44px; }
-  .isc-number-dark { font-size: 44px; }
-  .impact-newsletter { padding: 48px 32px; }
-  .impact-approach-content { padding: 40px 32px; }
+/* Hide Weebly branding in footer area cleanly */
+#footer-row {
+  display: none;
 }
 
+/* Mobile nav hide on desktop */
 @media (max-width: 767px) {
-  .impact-hero { min-height: 260px; }
-  .impact-hero-title { font-size: 24px; padding: 6px 16px; }
-  .impact-hero-content { padding: 20px; }
-
-  /* Stats grid 1 — stack all cards */
-  .impact-stats-grid-1 {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-  .impact-stat-card-large {
-    grid-column: 1;
-    grid-row: auto;
-  }
-  .isc-number { font-size: 40px; }
-  .isc-number-dark { font-size: 40px; }
-
-  .impact-stats-section-1,
-  .impact-stats-section-2,
-  .impact-stats-section-3 { padding: 20px; }
-  .impact-banner-yellow,
-  .impact-banner-green { padding: 16px 20px; }
-  .impact-banner-text,
-  .impact-banner-text-white { font-size: 16px; }
-
-  /* Stats grid 2 & 3 — single column */
-  .impact-stats-grid-2,
-  .impact-stats-grid-3 { grid-template-columns: 1fr; }
-
-  /* Testimonial */
-  .testimonial-slider { flex-direction: column; gap: 16px; padding: 24px 20px; }
-  .testimonial-card { padding: 24px 20px; }
-  .testimonial-quote { font-size: 15px; }
-  .testimonial-arrow { display: none; }
-
-  /* Newsletter */
-  .impact-newsletter { padding: 40px 20px; }
-  .impact-newsletter-heading { font-size: 24px; }
-  .impact-newsletter-body { font-size: 17px; }
-
-  /* Approach */
-  .impact-approach-inner { flex-direction: column; }
-  .impact-approach-image { flex: none; height: 220px; width: 100%; }
-  .impact-approach-content { padding: 28px 20px; }
-  .impact-approach-heading { font-size: 24px; }
-  .impact-approach-body { font-size: 17px; }
+  .weebly-nav-wrapper { display: none; }
+  .navbar-donate-btn { display: none; }
+  .hamburger-btn { display: flex; }
+}
+@media (min-width: 768px) {
+  .hamburger-btn { display: none; }
 }
