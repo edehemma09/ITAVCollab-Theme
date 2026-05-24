@@ -3,43 +3,60 @@
    Tablet: max 1199px | Mobile: max 767px | Small: max 480px
    ============================================================ */
 
-/* ===== TABLET ===== */
+/* ===== TABLET (max 1199px) ===== */
 @media (max-width: 1199px) {
   :root {
+    --section-pad:  48px;   /* uniform section padding tablet */
+    --section-gap:  40px;
     --size-hero-heading: 48px; --line-height-hero-heading: 59px;
-    --size-hero-body: 20px; --line-height-hero-body: 39px;
-    --size-h2: 32px; --line-height-h2: 51px;
-    --size-body: 20px; --line-height-body: 39px;
-    --size-cta: 20px; --line-height-cta: 24px;
-    --size-nav: 16px; --line-height-nav: 22px;
-    --section-gap: 40px;
+    --size-hero-body: 20px;    --line-height-hero-body: 39px;
+    --size-h2: 32px;           --line-height-h2: 51px;
+    --size-body: 20px;         --line-height-body: 39px;
+    --size-cta: 20px;          --line-height-cta: 24px;
+    --size-nav: 16px;          --line-height-nav: 22px;
+    --btn-donate-padding: 24px 32px;
   }
   .navbar-inner { padding: 12px 24px; }
   .navbar-logo img { width: 56px; height: 56px; }
+
+  /* Hero sections */
   .hero-section { padding: 60px 32px; min-height: 520px; }
   .hero-text-card { padding: 24px 32px; }
+
+  /* Impact homepage */
   .impact-heading { font-size: 52px; }
   .stat-number { font-size: 40px; }
-  .who-we-are-section, .centering-section, .villager-keeper-section,
-  .wellness-offerings-section, .partners-section { padding: 48px 32px; }
-  .impact-section { padding: 48px 32px; }
+
+  /* Footer */
   .footer-top { grid-template-columns: 160px 1fr; gap: 40px; }
   .footer-nav-grid { grid-template-columns: repeat(3,1fr); }
   .site-footer { padding: 48px 32px 32px; }
+
   /* Inner page heroes */
-  .page-hero, .about-hero, .team-hero-section, .impact-hero { min-height: 300px; }
-  .page-hero-title, .about-hero-title, .team-hero-title, .impact-hero-title { font-size: 38px; }
-  .page-hero-content, .about-hero-content, .team-hero-overlay, .impact-hero-content { padding: 40px 32px; }
-  .vision-section { padding: 48px 32px; }
+  .page-hero { min-height: 300px; }
+  .page-hero-title { font-size: 38px; }
+  .page-hero-content { padding: 40px 32px; }
+
+  /* About */
   .vision-card { padding: 28px 32px; }
   .story-text-col { padding: 40px 32px; }
   .feature-card-content { padding: 40px 32px; }
-  .team-section, .board-section, .staff-section { padding: 40px 32px; }
-  .impact-stats-section-1, .impact-stats-section-2, .impact-stats-section-3 { padding: 24px 32px; }
-  .impact-banner-yellow, .impact-banner-green { padding: 18px 32px; }
+
+  /* Impact stats */
+  .impact-stats-section-1,
+  .impact-stats-section-2,
+  .impact-stats-section-3 { padding: 24px 32px; }
+  .impact-banner-yellow,
+  .impact-banner-green { padding: 18px 32px; }
   .isc-number, .isc-number-dark { font-size: 44px; }
-  .impact-newsletter { padding: 48px 32px; }
   .impact-approach-content { padding: 40px 32px; }
+
+  /* Approach */
+  .approach-ripple-content { padding: 40px 32px; }
+  .approach-stat-cards { flex: 0 0 260px; }
+
+  /* Programs */
+  .program-row-content { padding: 40px 32px; }
 }
 
 /* ===== MOBILE ===== */
@@ -61,9 +78,6 @@
   /* Homepage sections */
   .who-we-are-inner, .centering-inner, .villager-keeper-inner { flex-direction: column; }
   .who-we-are-image, .centering-image, .villager-keeper-image { min-height: 260px; width: 100%; }
-  .who-we-are-section, .centering-section, .villager-keeper-section,
-  .wellness-offerings-section, .partners-section { padding: 40px 20px; }
-  .impact-section { padding: 40px 20px; }
   .impact-inner { flex-direction: column; gap: 28px; }
   .impact-heading { font-size: 44px; text-align: center; }
   .impact-stats-grid { grid-template-columns: repeat(2,1fr); gap: 12px; }

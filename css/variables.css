@@ -1,47 +1,65 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;700&display=swap');
 
 :root {
-  /* Brand Colors */
-  --green-accent: #29741D;
-  --background: #FAFAFA;
-  --white: #FFF;
-  --black: #000;
+  /* ── BRAND COLORS ─────────────────────────────── */
+  --green-accent:        #29741D;
+  --green-dark:          #1E5C14;
+  --gold-accent:         #FAD228;
+  --background:          #FAFAFA;
+  --white:               #FFFFFF;
+  --black:               #000000;
+  --primary-text:        #000000;
+  --icon-bar-bg:         #2C2C2C;
+  --footer-bg:           #1C1C1E;
   --chrome-granite-gray: #F1F3F4;
-  --ios-macos-gray-dark: #1C1C1E;
   --chrome-raisin-black: #202124;
-  --icon-bar-bg: #2C2C2C;
-  --impact-section-bg: #1E5C14;
-  --footer-bg: #1C1C1E;
-  --overlay-dark: rgba(0, 0, 0, 0.40);
+  --border-light:        #E8E8E8;
+  --dropdown-bg:         #FFFFFF;
+  --dropdown-hover:      #F5F5F5;
+  --dropdown-shadow:     0 8px 24px rgba(0,0,0,0.15);
+  --overlay-dark:        rgba(0,0,0,0.50);
 
-  /* Typography */
+  /* ── TYPOGRAPHY ───────────────────────────────── */
   --font-montserrat: 'Montserrat', -apple-system, Roboto, Helvetica, sans-serif;
-  --font-open-sans: 'Open Sans', -apple-system, Roboto, Helvetica, sans-serif;
+  --font-open-sans:  'Open Sans',  -apple-system, Roboto, Helvetica, sans-serif;
 
-  /* Font Sizes */
-  --size-hero-heading: 64px;
+  /* Desktop (1512px+) */
+  --size-hero-heading:      64px;
   --line-height-hero-heading: 80px;
-  --size-hero-body-text: 24px;
-  --line-height-hero-body: 46px;
-  --size-h2: 40px;
-  --line-height-h2: 65px;
-  --size-body-text: 24px;
-  --line-height-body-text: 46px;
-  --size-cta: 24px;
-  --line-height-cta: 29px;
-  --size-nav-link: 24px;
-  --line-height-nav-link: 29px;
-  --size-footer-category: 20px;
-  --line-height-footer-category: 34px;
-  --size-footer-sub: 20px;
+  --size-hero-body:         24px;
+  --line-height-hero-body:  46px;
+  --size-h2:                40px;
+  --line-height-h2:         65px;
+  --size-h3:                32px;
+  --line-height-h3:         50px;
+  --size-body:              24px;
+  --line-height-body:       46px;
+  --size-cta:               24px;
+  --line-height-cta:        29px;
+  --size-nav:               24px;
+  --line-height-nav:        29px;
+  --size-footer-cat:        20px;
+  --line-height-footer-cat: 34px;
+  --size-footer-sub:        20px;
   --line-height-footer-sub: 34px;
 
-  /* Spacing */
-  --section-padding: 64px;
-  --section-gap: 56px;
-  --btn-padding: 28px 40px;
-  --btn-radius: 8px;
+  /* ── SPACING ──────────────────────────────────── */
+  --section-pad:    64px;   /* uniform vertical padding for all sections */
+  --section-gap:    56px;   /* horizontal gap between two-col layouts    */
+  --btn-radius:     8px;
 
-  /* Shadows */
-  --nav-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.25);
+  /* Donate button: 26px top/bottom (2px less than body buttons) */
+  --btn-donate-padding:  26px 40px;
+  --btn-padding:         28px 40px;
+
+  /* ── SHADOWS ──────────────────────────────────── */
+  --nav-shadow: 0 3px 3px 0 rgba(0,0,0,0.25);
+
+  /* ── Z-INDEX STACK ────────────────────────────── */
+  /*  hero sections use z-index 0-2 internally       */
+  --z-icon-bar:    100;
+  --z-navbar:      200;   /* above hero (which is static/relative) */
+  --z-dropdown:    300;   /* above navbar                          */
+  --z-overlay:    1000;
+  --z-mobile-menu: 1001;
 }
