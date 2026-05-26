@@ -1000,3 +1000,424 @@ ul { list-style: none; }
   .wh-community-grid { grid-template-columns: 1fr; gap: 16px; }
   .wh-not-seeing-heading { font-size: 22px; }
 }
+
+/* ============================================================
+   DONATE PAGE
+   ============================================================ */
+
+/* ── 1. Hero ── */
+.donate-hero {
+  position: relative;
+  min-height: 420px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1a2e1a;
+}
+.donate-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+.donate-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.50);
+  z-index: 1;
+}
+.donate-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 40px;
+}
+.donate-hero-title {
+  font-family: var(--font-montserrat);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin: 0;
+}
+.donate-hero-subtitle {
+  font-family: var(--font-open-sans);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── 2. When Traditional Systems Fail ── */
+.donate-systems {
+  padding: var(--section-pad);
+  background: var(--white);
+}
+.donate-systems-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.donate-systems-heading {
+  font-family: var(--font-montserrat);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  color: var(--primary-text);
+  line-height: var(--line-height-h2);
+  margin: 0 0 16px 0;
+}
+.donate-systems-body {
+  font-family: var(--font-open-sans);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--primary-text);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── 3. Why Your Gift Matters — image left, text right ── */
+.donate-why {
+  padding: var(--section-pad);
+  background: var(--background);
+}
+.donate-why-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+.donate-why-image {
+  flex: 0 0 40%;
+  border-radius: 4px;
+  overflow: hidden;
+  max-height: 340px;
+}
+.donate-why-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.donate-why-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.donate-why-heading {
+  font-family: var(--font-montserrat);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  color: var(--primary-text);
+  line-height: var(--line-height-h2);
+  margin: 0;
+}
+.donate-why-body {
+  font-family: var(--font-open-sans);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--primary-text);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── 4. Support Cards ── */
+.donate-support-cards {
+  padding: var(--section-pad);
+  background: var(--white);
+}
+.donate-support-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.donate-support-intro {
+  font-family: var(--font-open-sans);
+  font-size: 16px;
+  color: var(--primary-text);
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+.donate-support-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.donate-support-card {
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+}
+.donate-support-card--green {
+  background: var(--green-accent);
+  border-color: var(--green-accent);
+}
+.donate-support-card--green .donate-support-text {
+  color: var(--white);
+}
+.donate-support-text {
+  font-family: var(--font-open-sans);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--primary-text);
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
+
+/* ── 5. Become A Village Keeper — image left, text right ── */
+.donate-keeper {
+  padding: var(--section-pad);
+  background: var(--background);
+}
+.donate-keeper-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+.donate-keeper-image {
+  flex: 0 0 38%;
+  border-radius: 4px;
+  overflow: hidden;
+  max-height: 340px;
+}
+.donate-keeper-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.donate-keeper-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.donate-keeper-heading {
+  font-family: var(--font-montserrat);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  color: var(--primary-text);
+  line-height: var(--line-height-h2);
+  margin: 0;
+}
+.donate-keeper-body {
+  font-family: var(--font-open-sans);
+  font-size: 17px;
+  color: var(--primary-text);
+  line-height: 1.7;
+  margin: 0;
+}
+.donate-keeper-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.donate-keeper-list li {
+  font-family: var(--font-open-sans);
+  font-size: 15px;
+  color: var(--primary-text);
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+.donate-keeper-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary-text);
+}
+
+/* ── 6. Impact of Your Support — 2×2 green cards ── */
+.donate-impact {
+  padding: var(--section-pad);
+  background: var(--white);
+}
+.donate-impact-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.donate-impact-heading {
+  font-family: var(--font-montserrat);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  color: var(--primary-text);
+  line-height: var(--line-height-h2);
+  margin: 0 0 8px 0;
+}
+.donate-impact-sub {
+  font-family: var(--font-open-sans);
+  font-size: 16px;
+  color: var(--primary-text);
+  line-height: 1.6;
+  margin: 0 0 28px 0;
+}
+.donate-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.donate-impact-card {
+  background: var(--green-accent);
+  border-radius: 4px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.donate-impact-amount {
+  font-family: var(--font-montserrat);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.1;
+  margin: 0;
+  text-align: center;
+}
+.donate-impact-tier {
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.3;
+  margin: 0 0 8px 0;
+  text-align: center;
+  opacity: 0.9;
+}
+.donate-impact-desc {
+  font-family: var(--font-open-sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.6;
+  margin: 0;
+}
+.donate-impact-desc strong {
+  font-weight: 700;
+}
+
+/* ── 7. The Village Needs Your Support — image left, text right ── */
+.donate-village {
+  padding: var(--section-pad);
+  background: var(--background);
+}
+.donate-village-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+.donate-village-image {
+  flex: 0 0 38%;
+  border-radius: 4px;
+  overflow: hidden;
+  max-height: 320px;
+}
+.donate-village-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.donate-village-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.donate-village-heading {
+  font-family: var(--font-montserrat);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  color: var(--primary-text);
+  line-height: var(--line-height-h2);
+  margin: 0;
+}
+.donate-village-body {
+  font-family: var(--font-open-sans);
+  font-size: 17px;
+  color: var(--primary-text);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── 8. Other Ways to Get Involved ── */
+.donate-other {
+  padding: var(--section-pad);
+  background: var(--white);
+  text-align: center;
+}
+.donate-other-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.donate-other-heading {
+  font-family: var(--font-montserrat);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  color: var(--primary-text);
+  line-height: var(--line-height-h2);
+  margin: 0;
+}
+.donate-other-sub {
+  font-family: var(--font-open-sans);
+  font-size: 16px;
+  color: var(--primary-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Donate Responsive ── */
+@media (max-width: 1199px) {
+  .donate-hero-title { font-size: 38px; }
+  .donate-support-grid { grid-template-columns: repeat(2, 1fr); }
+  .donate-why-inner,
+  .donate-keeper-inner,
+  .donate-village-inner { gap: 40px; }
+}
+@media (max-width: 767px) {
+  .donate-hero { min-height: 300px; }
+  .donate-hero-title { font-size: 28px; }
+  .donate-hero-subtitle { font-size: 15px; }
+  .donate-hero-content { padding: 32px 20px; }
+  .donate-systems-heading,
+  .donate-why-heading,
+  .donate-keeper-heading,
+  .donate-impact-heading,
+  .donate-village-heading,
+  .donate-other-heading { font-size: 24px; }
+  .donate-why-inner,
+  .donate-keeper-inner,
+  .donate-village-inner { flex-direction: column; }
+  .donate-why-image,
+  .donate-keeper-image,
+  .donate-village-image { flex: none; width: 100%; max-height: 220px; }
+  .donate-support-grid { grid-template-columns: repeat(2, 1fr); }
+  .donate-impact-grid { grid-template-columns: 1fr; }
+  .donate-impact-amount { font-size: 40px; }
+}
+@media (max-width: 480px) {
+  .donate-support-grid { grid-template-columns: 1fr; }
+}
