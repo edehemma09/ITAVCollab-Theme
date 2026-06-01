@@ -1421,3 +1421,487 @@ ul { list-style: none; }
 @media (max-width: 480px) {
   .donate-support-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   ORGANIZATIONAL WELLNESS PAGE
+   ============================================================ */
+
+/* ── 2. Why Organizations Partner ── */
+.ow-why {
+  padding: var(--section-pad);
+  background: var(--white);
+}
+.ow-why-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.ow-section-heading {
+  font-family: var(--font-montserrat);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  color: var(--primary-text);
+  line-height: var(--line-height-h2);
+  margin: 0;
+}
+.ow-body {
+  font-family: var(--font-open-sans);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--primary-text);
+  line-height: 1.7;
+  margin: 0;
+}
+.ow-green {
+  color: var(--green-accent);
+  font-weight: 700;
+}
+
+/* ── 3. What We Offer — 3 cards ── */
+.ow-offer {
+  padding: var(--section-pad);
+  background: var(--background);
+}
+.ow-offer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.ow-offer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.ow-offer-card {
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.ow-offer-card--dark .ow-offer-card-header {
+  background: var(--green-dark);
+}
+.ow-offer-card-header {
+  background: var(--green-accent);
+  color: var(--white);
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 16px 20px;
+  text-align: center;
+  line-height: 1.3;
+}
+.ow-offer-list {
+  list-style: none;
+  padding: 20px 20px 20px 20px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.ow-offer-list li {
+  font-family: var(--font-open-sans);
+  font-size: 15px;
+  color: var(--primary-text);
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+.ow-offer-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary-text);
+}
+
+/* ── 4. Partners logos ── */
+.ow-partners {
+  padding: var(--section-pad);
+  background: var(--white);
+  text-align: center;
+}
+.ow-partners-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+.ow-partners-intro {
+  font-family: var(--font-open-sans);
+  font-size: 16px;
+  color: var(--primary-text);
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
+.ow-partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 32px 48px;
+  max-width: 900px;
+}
+.ow-partner-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ow-partner-logo img {
+  max-height: 72px;
+  max-width: 160px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ── 5. CTA ── */
+.ow-cta {
+  padding: var(--section-pad);
+  background: var(--background);
+  text-align: center;
+}
+.ow-cta-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.ow-cta-heading {
+  font-family: var(--font-montserrat);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  color: var(--primary-text);
+  line-height: var(--line-height-h2);
+  margin: 0;
+}
+.ow-cta-body {
+  font-family: var(--font-open-sans);
+  font-size: 17px;
+  color: var(--primary-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── OW Responsive ── */
+@media (max-width: 1199px) {
+  .ow-offer-grid { gap: 16px; }
+}
+@media (max-width: 767px) {
+  .ow-section-heading { font-size: 22px; }
+  .ow-offer-grid { grid-template-columns: 1fr; }
+  .ow-cta-heading { font-size: 22px; }
+}
+
+
+/* ============================================================
+   HEALING JUSTICE PAGE
+   ============================================================ */
+
+/* ── 2. Personal Healing intro — text left, image right ── */
+.hj-intro {
+  padding: var(--section-pad);
+  background: var(--white);
+}
+.hj-intro-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+.hj-intro-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.hj-intro-image {
+  flex: 0 0 40%;
+  border-radius: 4px;
+  overflow: hidden;
+  max-height: 300px;
+}
+.hj-intro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hj-section-heading {
+  font-family: var(--font-montserrat);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  color: var(--primary-text);
+  line-height: var(--line-height-h2);
+  margin: 0;
+}
+.hj-body {
+  font-family: var(--font-open-sans);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--primary-text);
+  line-height: 1.7;
+  margin: 0;
+}
+.hj-green {
+  color: var(--green-accent);
+  font-weight: 700;
+}
+
+/* ── 3. Reentry & Identity ── */
+.hj-reentry {
+  padding: var(--section-pad);
+  background: var(--background);
+}
+.hj-reentry-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── 4. Offer image + green card overlay ── */
+.hj-offer-section {
+  padding: 0;
+  background: var(--background);
+}
+.hj-offer-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--section-pad) var(--section-pad);
+}
+.hj-offer-image {
+  position: relative;
+  width: 100%;
+  max-height: 360px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+.hj-offer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  max-height: 360px;
+}
+.hj-offer-card {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: var(--green-accent);
+  padding: 24px 28px;
+  max-width: 300px;
+  border-radius: 4px 0 4px 0;
+}
+.hj-offer-card-title {
+  font-family: var(--font-montserrat);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--white);
+  margin: 0 0 12px 0;
+}
+.hj-offer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.hj-offer-list li {
+  font-family: var(--font-open-sans);
+  font-size: 14px;
+  color: var(--white);
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+.hj-offer-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--white);
+}
+
+/* ── 5. To Be Me text ── */
+.hj-tbm {
+  padding: var(--section-pad);
+  background: var(--white);
+}
+.hj-tbm-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── 6. In 8-12 Weeks grid ── */
+.hj-weeks {
+  padding: var(--section-pad);
+  background: var(--background);
+}
+.hj-weeks-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 12px;
+}
+/* Statement cell — gold, spans 1 col, 3 rows */
+.hj-weeks-statement {
+  grid-column: 1;
+  grid-row: 1 / 4;
+  background: var(--gold-accent);
+  border-radius: 4px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+.hj-weeks-number {
+  font-family: var(--font-montserrat);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--primary-text);
+  line-height: 1.15;
+  margin: 0;
+}
+.hj-weeks-sub {
+  font-family: var(--font-open-sans);
+  font-size: 14px;
+  color: var(--primary-text);
+  line-height: 1.5;
+  margin: 0;
+}
+/* Green topic cards */
+.hj-weeks-card {
+  border-radius: 4px;
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hj-weeks-card p {
+  font-family: var(--font-montserrat);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  text-align: center;
+  line-height: 1.3;
+  margin: 0;
+}
+.hj-weeks-card--green {
+  background: var(--green-accent);
+}
+.hj-weeks-card--gold {
+  background: var(--gold-accent);
+}
+/* Grid placement — col2/3/4, rows 1-3 */
+/* Row 1: Deep Self-Care (col2), [empty gold col3], Identity Reconstruction (col4) */
+.hj-weeks-grid > .hj-weeks-card:nth-child(2) { grid-column: 2; grid-row: 1; }
+.hj-weeks-grid > .hj-weeks-card:nth-child(3) { grid-column: 3; grid-row: 1; }
+.hj-weeks-grid > .hj-weeks-card:nth-child(4) { grid-column: 2; grid-row: 2; }
+/* Row 2: empty gold (col2), Self-Determination (col3), empty gold (col4) */
+.hj-weeks-card--center                        { grid-column: 3; grid-row: 2; }
+.hj-weeks-grid > .hj-weeks-card:nth-child(6) { grid-column: 4; grid-row: 1; }
+.hj-weeks-grid > .hj-weeks-card:nth-child(7) { grid-column: 4; grid-row: 2; }
+/* Row 3: Professional Growth (col2), empty gold (col3), Community Support (col4) */
+.hj-weeks-grid > .hj-weeks-card:nth-child(8) { grid-column: 2; grid-row: 3; }
+.hj-weeks-grid > .hj-weeks-card:nth-child(9)  { grid-column: 4; grid-row: 3; }
+
+/* ── 7. Partners ── */
+.hj-partners {
+  padding: var(--section-pad);
+  background: var(--white);
+}
+.hj-partners-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.hj-partners-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px 48px;
+}
+.hj-partner-logo {
+  display: flex;
+  align-items: center;
+}
+.hj-partner-logo img {
+  max-height: 64px;
+  max-width: 150px;
+  width: auto;
+  object-fit: contain;
+}
+.hj-xispossible {
+  display: flex;
+  align-items: center;
+}
+.hj-xispossible img {
+  max-height: 48px;
+  max-width: 200px;
+  width: auto;
+  object-fit: contain;
+}
+.hj-contact-text {
+  font-family: var(--font-open-sans);
+  font-size: 16px;
+  color: var(--primary-text);
+  line-height: 1.6;
+  margin: 0;
+}
+.hj-email-link {
+  color: var(--green-accent);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ── HJ Responsive ── */
+@media (max-width: 1199px) {
+  .hj-weeks-number { font-size: 32px; }
+}
+@media (max-width: 767px) {
+  .hj-section-heading { font-size: 22px; }
+  .hj-intro-inner { flex-direction: column; gap: 24px; }
+  .hj-intro-image { flex: none; width: 100%; max-height: 220px; }
+  .hj-offer-card { position: static; max-width: 100%; border-radius: 0 0 4px 4px; }
+  .hj-offer-image { max-height: none; }
+  .hj-weeks-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .hj-weeks-statement {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+  .hj-weeks-grid > .hj-weeks-card:nth-child(2),
+  .hj-weeks-grid > .hj-weeks-card:nth-child(3),
+  .hj-weeks-grid > .hj-weeks-card:nth-child(4),
+  .hj-weeks-card--center,
+  .hj-weeks-grid > .hj-weeks-card:nth-child(6),
+  .hj-weeks-grid > .hj-weeks-card:nth-child(7),
+  .hj-weeks-grid > .hj-weeks-card:nth-child(8),
+  .hj-weeks-grid > .hj-weeks-card:nth-child(9) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .hj-weeks-card--gold { display: none; }
+}
