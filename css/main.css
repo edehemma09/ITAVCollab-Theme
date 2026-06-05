@@ -149,24 +149,24 @@ ul { list-style: none; }
 /* ============================================================
    FOOTER
    ============================================================ */
-.site-footer { background: var(--footer-bg); color: var(--white); padding: 64px 64px 40px; }
-.footer-top { display: grid; grid-template-columns: 240px 1fr; gap: 64px; max-width: 1440px; margin: 0 auto 48px; align-items: flex-start; }
-.footer-logo-block { display: flex; flex-direction: column; gap: 20px; }
-.footer-logo { width: 100px; height: auto; }
-.footer-mission { font-family: var(--font-open-sans); font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.8); }
-.footer-nav-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 32px; }
-.footer-nav-col { display: flex; flex-direction: column; gap: 12px; }
-.footer-nav-heading { font-family: var(--font-montserrat); font-size: var(--size-footer-cat); font-weight: 700; line-height: var(--line-height-footer-cat); color: var(--white); margin-bottom: 4px; display: block; }
-.footer-nav-link { font-family: var(--font-montserrat); font-size: var(--size-footer-sub); font-weight: 500; line-height: var(--line-height-footer-sub); color: rgba(255,255,255,0.75); transition: color 0.15s; display: block; }
+.site-footer { background: var(--footer-bg); color: var(--white); padding: 48px 64px 32px; }
+.footer-top { display: grid; grid-template-columns: 180px 1fr; gap: 48px; max-width: 1440px; margin: 0 auto 40px; align-items: flex-start; }
+.footer-logo-block { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
+.footer-logo { width: 120px; height: 120px; object-fit: contain; background: var(--white); border-radius: 4px; padding: 4px; }
+.footer-mission { font-family: var(--font-open-sans); font-size: 14px; line-height: 1.7; color: rgba(255,255,255,0.9); }
+.footer-nav-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 24px; }
+.footer-nav-col { display: flex; flex-direction: column; gap: 10px; }
+.footer-nav-heading { font-family: var(--font-montserrat); font-size: 14px; font-weight: 700; color: var(--white); margin-bottom: 6px; display: block; line-height: 1.4; }
+.footer-nav-link { font-family: var(--font-open-sans); font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.85); transition: color 0.15s; display: block; line-height: 1.5; }
 .footer-nav-link:hover { color: var(--white); }
-.footer-divider { border: none; border-top: 2px solid rgba(255,255,255,0.15); max-width: 1440px; margin: 0 auto 32px; }
-.footer-bottom { max-width: 1440px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 20px; }
-.footer-email { font-family: var(--font-montserrat); font-size: 20px; font-weight: 500; color: var(--white); transition: opacity 0.2s; }
+.footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.25); max-width: 1440px; margin: 0 auto 24px; }
+.footer-bottom { max-width: 1440px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.footer-email { font-family: var(--font-open-sans); font-size: 16px; font-weight: 400; color: var(--white); transition: opacity 0.2s; }
 .footer-email:hover { opacity: 0.8; }
 .social-icons { display: flex; justify-content: center; align-items: center; gap: 32px; flex-wrap: wrap; }
-.social-icon img { height: 40px; width: auto; object-fit: contain; transition: opacity 0.2s; }
+.social-icon img { height: 32px; width: auto; object-fit: contain; transition: opacity 0.2s; }
 .social-icon:hover img { opacity: 0.8; }
-.footer-copyright { font-family: var(--font-montserrat); font-size: 16px; font-weight: 500; color: rgba(255,255,255,0.75); text-align: center; }
+.footer-copyright { font-family: var(--font-open-sans); font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.85); text-align: center; }
 
 /* ============================================================
    SHARED INNER PAGE HERO — centered title, all inner pages
@@ -2510,4 +2510,131 @@ ul { list-style: none; }
 }
 @media (max-width: 480px) {
   .nl-issues-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   OUR PARTNERS PAGE
+   ============================================================ */
+
+/* 2. Why Partner */
+.pt-why { padding: var(--section-pad); background: var(--white); }
+.pt-why-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+.pt-section-heading { font-family: var(--font-montserrat); font-size: var(--size-h2); font-weight: 700; color: var(--primary-text); line-height: var(--line-height-h2); margin: 0; }
+.pt-body { font-family: var(--font-open-sans); font-size: 17px; color: var(--primary-text); line-height: 1.7; margin: 0; }
+
+/* 5-col green cards */
+.pt-why-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 12px; }
+.pt-why-card { background: var(--green-accent); color: var(--white); font-family: var(--font-open-sans); font-size: 14px; font-weight: 400; line-height: 1.5; padding: 20px 16px; border-radius: 4px; text-align: center; display: flex; align-items: center; justify-content: center; min-height: 100px; }
+
+/* 3. Benefits */
+.pt-benefits { padding: var(--section-pad); background: var(--background); }
+.pt-benefits-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 48px; }
+.pt-benefit-row { display: flex; align-items: center; gap: 48px; }
+.pt-benefit-row--reverse { flex-direction: row-reverse; }
+.pt-benefit-image { flex: 0 0 42%; border-radius: 4px; overflow: hidden; max-height: 280px; }
+.pt-benefit-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pt-benefit-content { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+.pt-benefit-heading { font-family: var(--font-montserrat); font-size: 20px; font-weight: 700; color: var(--green-accent); line-height: 1.3; margin: 0; }
+.pt-benefit-body { font-family: var(--font-open-sans); font-size: 16px; color: var(--primary-text); line-height: 1.7; margin: 0; }
+
+/* 4. Partnership Types */
+.pt-types { padding: var(--section-pad); background: var(--white); }
+.pt-types-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+.pt-types-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.pt-type-card { border: 1px solid #d0d0d0; border-radius: 4px; padding: 28px 24px; display: flex; flex-direction: column; gap: 10px; background: var(--white); }
+.pt-type-card--green { background: var(--green-accent); border-color: var(--green-accent); }
+.pt-type-card--green .pt-type-name,
+.pt-type-card--green .pt-type-desc { color: var(--white); }
+.pt-type-name { font-family: var(--font-montserrat); font-size: 18px; font-weight: 700; color: var(--primary-text); margin: 0; line-height: 1.3; }
+.pt-type-desc { font-family: var(--font-open-sans); font-size: 15px; color: var(--primary-text); line-height: 1.6; margin: 0; }
+
+/* 5. Partner Logos */
+.pt-logos { padding: var(--section-pad); background: var(--background); text-align: center; }
+.pt-logos-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 32px; }
+.pt-logos-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px 40px; align-items: center; justify-items: center; width: 100%; }
+.pt-logo-item { display: flex; align-items: center; justify-content: center; }
+.pt-logo-item img { max-height: 72px; max-width: 160px; width: auto; object-fit: contain; }
+.pt-logo-xispossible { display: flex; align-items: center; justify-content: center; }
+.pt-logo-xispossible img { max-height: 56px; max-width: 220px; width: auto; object-fit: contain; }
+
+/* 6. CTA */
+.pt-cta { padding: var(--section-pad); background: var(--white); text-align: center; }
+.pt-cta-inner { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.pt-cta-heading { font-family: var(--font-montserrat); font-size: var(--size-h2); font-weight: 700; color: var(--primary-text); line-height: var(--line-height-h2); margin: 0; }
+.pt-cta-body { font-family: var(--font-open-sans); font-size: 17px; color: var(--primary-text); line-height: 1.6; margin: 0; }
+
+/* Partners Responsive */
+@media (max-width: 1199px) {
+  .pt-why-grid { grid-template-columns: repeat(3,1fr); }
+  .pt-benefit-row { gap: 32px; }
+  .pt-logos-grid { grid-template-columns: repeat(3,1fr); }
+}
+@media (max-width: 767px) {
+  .pt-why-grid { grid-template-columns: repeat(2,1fr); }
+  .pt-benefit-row, .pt-benefit-row--reverse { flex-direction: column; gap: 20px; }
+  .pt-benefit-image { flex: none; width: 100%; max-height: 220px; }
+  .pt-section-heading { font-size: 22px; }
+  .pt-types-grid { grid-template-columns: 1fr; }
+  .pt-logos-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+
+/* ============================================================
+   WELLNESS INITIATIVES PAGE
+   ============================================================ */
+
+/* Hero — green badge box with title + subtitle */
+.wi-hero { position: relative; min-height: 380px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #1a2e1a; }
+.wi-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 0; }
+.wi-hero-title-box { position: relative; z-index: 2; background: var(--green-accent); padding: 24px 48px; text-align: center; display: flex; flex-direction: column; gap: 8px; }
+.wi-hero-title { font-family: var(--font-montserrat); font-size: 40px; font-weight: 700; color: var(--white); line-height: 1.2; margin: 0; }
+.wi-hero-subtitle { font-family: var(--font-open-sans); font-size: 16px; font-weight: 400; color: var(--white); line-height: 1.4; margin: 0; }
+
+/* Intro */
+.wi-intro { padding: var(--section-pad); background: var(--white); }
+.wi-intro-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+.wi-intro-heading { font-family: var(--font-montserrat); font-size: var(--size-h2); font-weight: 700; color: var(--primary-text); line-height: var(--line-height-h2); margin: 0; }
+.wi-intro-body { font-family: var(--font-open-sans); font-size: 17px; color: var(--primary-text); line-height: 1.7; margin: 0; }
+
+/* Offering rows — image + text alternating */
+.wi-offering { padding: var(--section-pad); background: var(--background); }
+.wi-offering:nth-child(odd) { background: var(--white); }
+.wi-offering-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 48px; }
+.wi-offering--reverse .wi-offering-inner { flex-direction: row-reverse; }
+.wi-offering-image { flex: 0 0 42%; border-radius: 4px; overflow: hidden; max-height: 280px; }
+.wi-offering-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.wi-offering-content { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+.wi-offering-heading { font-family: var(--font-montserrat); font-size: 22px; font-weight: 700; color: var(--green-accent); line-height: 1.3; margin: 0; }
+.wi-offering-body { font-family: var(--font-open-sans); font-size: 16px; color: var(--primary-text); line-height: 1.7; margin: 0; }
+
+/* CTA banner — green topographic bg */
+.wi-cta { background-image: url('../assets/images/hero-background.png'); background-size: cover; background-position: center; background-repeat: no-repeat; padding: 56px 64px; text-align: center; }
+.wi-cta-inner { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.wi-cta-heading { font-family: var(--font-montserrat); font-size: 24px; font-weight: 700; color: var(--white); line-height: 1.3; margin: 0; }
+.wi-cta-body { font-family: var(--font-open-sans); font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0; }
+
+/* Photo gallery — 3-col equal grid, no gaps */
+.wi-gallery { background: var(--background); }
+.wi-gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 4px; }
+.wi-gallery-item { overflow: hidden; aspect-ratio: 4/3; background: #b8c8b0; }
+.wi-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+.wi-gallery-item:hover img { transform: scale(1.04); }
+
+/* Wellness Initiatives Responsive */
+@media (max-width: 1199px) {
+  .wi-offering-inner { gap: 32px; }
+  .wi-cta { padding: 48px 32px; }
+}
+@media (max-width: 767px) {
+  .wi-hero { min-height: 260px; }
+  .wi-hero-title { font-size: 26px; }
+  .wi-hero-title-box { padding: 16px 24px; }
+  .wi-offering-inner, .wi-offering--reverse .wi-offering-inner { flex-direction: column; gap: 20px; }
+  .wi-offering-image { flex: none; width: 100%; max-height: 220px; }
+  .wi-intro-heading, .wi-offering-heading { font-size: 20px; }
+  .wi-cta { padding: 40px 20px; }
+  .wi-gallery-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 480px) {
+  .wi-gallery-grid { grid-template-columns: 1fr; }
 }

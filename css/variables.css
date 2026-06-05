@@ -10,7 +10,7 @@
   --black:               #000000;
   --primary-text:        #000000;
   --icon-bar-bg:         #2C2C2C;
-  --footer-bg:           #1C1C1E;
+  --footer-bg:           #29741D;
   --chrome-granite-gray: #F1F3F4;
   --chrome-raisin-black: #202124;
   --border-light:        #E8E8E8;
@@ -49,8 +49,8 @@
   --btn-radius:     8px;
 
   /* Donate button: 26px top/bottom (2px less than body buttons) */
-  --btn-donate-padding:  26px 40px;
-  --btn-padding:         28px 40px;
+  --btn-donate-padding:  23px 40px;
+  --btn-padding:         25px 40px;
 
   /* ── SHADOWS ──────────────────────────────────── */
   --nav-shadow: 0 3px 3px 0 rgba(0,0,0,0.25);
