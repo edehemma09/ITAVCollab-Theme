@@ -147,26 +147,122 @@ ul { list-style: none; }
 .partner-logo img:hover { filter: grayscale(0%); }
 
 /* ============================================================
-   FOOTER
+   FOOTER — matches PNG: brand row on top, nav grid below full width
    ============================================================ */
-.site-footer { background: var(--footer-bg); color: var(--white); padding: 40px 64px 28px; }
-.footer-top { max-width: 1440px; margin: 0 auto 32px; display: grid; grid-template-columns: 200px 1fr; gap: 40px; align-items: flex-start; }
-.footer-logo-block { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
-.footer-logo { width: 100px; height: 100px; object-fit: contain; background: var(--white); border-radius: 8px; padding: 6px; }
-.footer-mission { font-family: var(--font-open-sans); font-size: 13px; line-height: 1.65; color: rgba(255,255,255,0.9); }
-.footer-nav-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 16px 24px; }
-.footer-nav-col { display: flex; flex-direction: column; gap: 8px; }
-.footer-nav-heading { font-family: var(--font-montserrat); font-size: 13px; font-weight: 700; color: var(--white); margin-bottom: 4px; display: block; line-height: 1.4; }
-.footer-nav-link { font-family: var(--font-open-sans); font-size: 12px; font-weight: 400; color: rgba(255,255,255,0.85); transition: color 0.15s; display: block; line-height: 1.6; }
+
+/* Outer shell */
+.site-footer {
+  background: var(--footer-bg);
+  color: var(--white);
+  padding: 40px 64px 28px;
+}
+
+/* Row 1: logo left + mission text right, side by side */
+.footer-brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 1440px;
+  margin: 0 auto 32px;
+}
+.footer-logo {
+  flex-shrink: 0;
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  background: var(--white);
+  border-radius: 8px;
+  padding: 6px;
+}
+.footer-mission {
+  font-family: var(--font-open-sans);
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.90);
+  margin: 0;
+  padding-top: 4px;
+}
+
+/* Row 2: 5 nav columns spanning full width */
+.footer-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px 24px;
+  max-width: 1440px;
+  margin: 0 auto 28px;
+}
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-nav-heading {
+  font-family: var(--font-montserrat);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.4;
+  margin-bottom: 4px;
+  display: block;
+}
+.footer-nav-link {
+  font-family: var(--font-open-sans);
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+  display: block;
+  transition: color 0.15s;
+}
 .footer-nav-link:hover { color: var(--white); }
-.footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.2); max-width: 1440px; margin: 0 auto 20px; }
-.footer-bottom { max-width: 1440px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 12px; }
-.footer-email { font-family: var(--font-open-sans); font-size: 14px; font-weight: 400; color: var(--white); transition: opacity 0.2s; }
+
+/* Divider */
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.20);
+  max-width: 1440px;
+  margin: 0 auto 20px;
+}
+
+/* Row 3: email + social icons + copyright — all centered */
+.footer-bottom {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.footer-email {
+  font-family: var(--font-open-sans);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--white);
+  transition: opacity 0.2s;
+}
 .footer-email:hover { opacity: 0.8; }
-.social-icons { display: flex; justify-content: center; align-items: center; gap: 32px; flex-wrap: wrap; }
-.social-icon img { height: 32px; width: auto; object-fit: contain; transition: opacity 0.2s; }
-.social-icon:hover img { opacity: 0.8; }
-.footer-copyright { font-family: var(--font-open-sans); font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.85); text-align: center; }
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+.social-icon:hover { opacity: 0.8; }
+.footer-copyright {
+  font-family: var(--font-open-sans);
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+}
+
 
 /* ============================================================
    SHARED INNER PAGE HERO — centered title, all inner pages

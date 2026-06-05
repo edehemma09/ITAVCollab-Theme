@@ -89,16 +89,15 @@
   .partner-logo img { max-height: 56px; max-width: 120px; }
 
   /* Footer */
-  .site-footer { padding: 32px 20px 20px; }
-  .footer-top { grid-template-columns: 1fr; gap: 20px; }
-  .footer-nav-grid { grid-template-columns: repeat(2,1fr); gap: 16px; }
-  .footer-logo-block { align-items: center; text-align: center; }
-  .footer-logo { width: 72px; height: 72px; }
-  .footer-mission { text-align: center; font-size: 12px; }
-  .social-icons { gap: 14px; }
+  .site-footer { padding: 28px 20px 20px; }
+  .footer-brand { flex-direction: column; align-items: center; text-align: center; gap: 12px; margin-bottom: 20px; }
+  .footer-logo { width: 64px; height: 64px; }
+  .footer-mission { font-size: 12px; text-align: center; }
+  .footer-nav-grid { grid-template-columns: repeat(2,1fr); gap: 14px 16px; margin-bottom: 20px; }
+  .social-icons { gap: 16px; }
   .social-icon svg { width: 28px; height: 28px; }
-  .footer-copyright { font-size: 11px; }
   .footer-email { font-size: 13px; }
+  .footer-copyright { font-size: 11px; }
 
   /* Inner page heroes — centered */
   .page-hero, .about-hero, .team-hero-section, .impact-hero { min-height: 240px; }
