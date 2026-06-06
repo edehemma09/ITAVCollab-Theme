@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wellness Hub — It Takes A Village Collaborative</title>
+  <meta name="description" content="Curated directory of culturally competent practitioners and healing resources." />
+  %%wsite_css%%
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  %%wsite_head%%
+</head>
+<body class="%%body_class%%">
+<div class="page-wrapper wsite-theme-content">
+
+  <!-- ICON BAR -->
+  <div class="icon-bar" role="banner">
+    <div class="icon-bar-left">
+      <button class="icon-bar-search" aria-label="Search">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><path d="M28 28L22.2 22.2M25.3333 14.6667C25.3333 20.5577 20.5577 25.3333 14.6667 25.3333C8.77563 25.3333 4 20.5577 4 14.6667C4 8.77563 8.77563 4 14.6667 4C20.5577 4 25.3333 8.77563 25.3333 14.6667Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="icon-bar-right">
+      <a href="#" class="signin-link">Sign In</a>
+      <button class="cart-btn" aria-label="Shopping cart">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none"><g clip-path="url(#cc_h)"><path d="M1.33337 1.33334H6.66671L10.24 19.1867C10.362 19.8005 10.6959 20.3519 11.1834 20.7444C11.671 21.1369 12.281 21.3453 12.9067 21.3333H25.8667C26.4924 21.3453 27.1025 21.1369 27.59 20.7444C28.0775 20.3519 28.4114 19.8005 28.5334 19.1867L30.6667 8H8.00004M13.3334 28C13.3334 28.7364 12.7364 29.3333 12 29.3333C11.2637 29.3333 10.6667 28.7364 10.6667 28C10.6667 27.2636 11.2637 26.6667 12 26.6667C12.7364 26.6667 13.3334 27.2636 13.3334 28ZM28 28C28 28.7364 27.4031 29.3333 26.6667 29.3333C25.9303 29.3333 25.3334 28.7364 25.3334 28C25.3334 27.2636 25.9303 26.6667 26.6667 26.6667C27.4031 26.6667 28 27.2636 28 28Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="cc_h"><rect width="32" height="32" fill="white"/></clipPath></defs></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="site-navbar wsite-nav" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a href="/" class="navbar-logo wsite-logo" aria-label="ITAVCollab Home">
+        <img src="assets/logos/itavcollab-logo.png" alt="It Takes A Village Collaborative" width="72" height="72" />
+      </a>
+      <div class="nav-links wsite-menu-default">
+        %%menu%%
+      </div>
+      <a href="/donate" class="btn btn-green navbar-donate-btn wsite-button">Donate</a>
+      <button class="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu-main">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-overlay" role="presentation"></div>
+  <div id="mobile-menu-main" class="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-modal="true">
+    <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
+    <div class="wsite-menu-default">%%menu%%</div>
+    <a href="/donate" class="btn btn-green mobile-donate-btn wsite-button">Donate</a>
+  </div>
+
+  <main id="main-content" class="wsite-content">
+
+<!-- 1. HERO — centered title + subtitle -->
+    <section class="page-hero" aria-label="Wellness Hub">
+      <img class="page-hero-bg" src="assets/images/wellness-hub-hero.jpg" alt="Two people sitting on grass in conversation at an ITAVCollab wellness event" />
+      <div class="page-hero-overlay" aria-hidden="true"></div>
+      <div class="page-hero-content">
+        <h1 class="page-hero-title">Wellness Hub</h1>
+        <p class="page-hero-subtitle">Our Resource Directory For All Your Holistic Needs</p>
+      </div>
+    </section>
+
+    <!-- 2. INTRO + CATEGORY NAV -->
+    <section class="wh-intro" aria-label="Wellness Hub Introduction">
+      <div class="wh-intro-inner">
+        <p class="wh-intro-text">Our <span class="wh-intro-green">Wellness Hub</span> is a curated space connecting you to culturally competent practitioners, providers, and healing resources aligned with our community wellness and healing justice values.</p>
+        <nav class="wh-category-nav" aria-label="Wellness Hub Categories">
+          <a href="#mental" class="btn btn-green wh-cat-btn">Mental Health</a>
+          <a href="#physical" class="btn btn-green wh-cat-btn">Physical</a>
+          <a href="#spiritual" class="btn btn-green wh-cat-btn">Spiritual &amp; Holistic</a>
+          <a href="#itavcollab-care" class="btn btn-green wh-cat-btn">ITAVCollab Care</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- 3. MENTAL HEALTH CARE RESOURCES -->
+    <section id="mental" class="wh-category-section" aria-label="Mental Health Care Resources">
+      <div class="wh-category-inner">
+        <h2 class="wh-category-heading">Mental Health Care Resources</h2>
+        <p class="wh-category-desc">ITAVCollab vetted therapists, psychologists, and outpatient providers to support your mental health needs.</p>
+        <div class="wh-provider-grid">
+
+          <!-- Mettie Works -->
+          <div class="wh-provider-card">
+            <h3 class="wh-provider-name">Mettie Works</h3>
+            <p class="wh-provider-type">TMS, Therapy, Employment, Reentry Services</p>
+            <p class="wh-provider-location">Upper Marlboro, MD</p>
+            <p class="wh-provider-phone">(240) 487-6934</p>
+            <a href="mailto:administrator@mettie-works.com" class="wh-provider-link">administrator@mettie-works.com</a>
+            <a href="https://www.mettie-works.com" class="wh-provider-link" target="_blank" rel="noopener noreferrer">www.mettie-works.com</a>
+          </div>
+
+          <!-- Confidence In You Services -->
+          <div class="wh-provider-card">
+            <h3 class="wh-provider-name">Confidence In You Services</h3>
+            <p class="wh-provider-type">Therapy &amp; Counseling</p>
+            <p class="wh-provider-location">Laurel, MD</p>
+            <p class="wh-provider-phone">(302) 715-2503</p>
+            <a href="mailto:info@confidenceinyouservices.com" class="wh-provider-link">info@confidenceinyouservices.com</a>
+            <a href="https://www.confidenceinyouservices.com" class="wh-provider-link" target="_blank" rel="noopener noreferrer">www.confidenceinyouservices.com</a>
+          </div>
+
+          <!-- Therapy For Black Girls -->
+          <div class="wh-provider-card">
+            <h3 class="wh-provider-name">Therapy For Black Girls</h3>
+            <p class="wh-provider-type">Therapy</p>
+            <p class="wh-provider-location">Online</p>
+            <a href="mailto:info@therapyforblackgirls.com" class="wh-provider-link">info@therapyforblackgirls.com</a>
+            <a href="https://www.therapyforblackgirls.com" class="wh-provider-link" target="_blank" rel="noopener noreferrer">www.therapyforblackgirls.com</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PHYSICAL HEALTH CARE RESOURCES -->
+    <section id="physical" class="wh-category-section" aria-label="Physical Health Care Resources">
+      <div class="wh-category-inner">
+        <h2 class="wh-category-heading">Physical Health Care Resources</h2>
+        <p class="wh-category-desc">ITAVCollab vetted primary care providers, preventative health resources, and insurance navigation information to support your physical health care needs.</p>
+        <div class="wh-provider-grid">
+
+          <!-- Kwaller Fit -->
+          <div class="wh-provider-card">
+            <h3 class="wh-provider-name">Kwaller Fit</h3>
+            <p class="wh-provider-type">Health &amp; Wellness Coach</p>
+            <p class="wh-provider-location">Columbia, MD<br/>Washington, DC</p>
+            <a href="https://www.kwallerfit.com" class="wh-provider-link" target="_blank" rel="noopener noreferrer">www.kwallerfit.com</a>
+          </div>
+
+          <!-- HIIT Hard Boxing -->
+          <div class="wh-provider-card">
+            <h3 class="wh-provider-name">HIIT Hard Boxing</h3>
+            <p class="wh-provider-type">Boxing Training</p>
+            <p class="wh-provider-location">DMV</p>
+            <a href="mailto:msprofit@hiithardboxing.com" class="wh-provider-link">msprofit@hiithardboxing.com</a>
+            <a href="https://www.hiithardboxingdmv.com" class="wh-provider-link" target="_blank" rel="noopener noreferrer">www.hiithardboxingdmv.com</a>
+          </div>
+
+          <!-- ClassPass -->
+          <div class="wh-provider-card">
+            <h3 class="wh-provider-name">ClassPass</h3>
+            <p class="wh-provider-type">Fitness &amp; Wellness</p>
+            <p class="wh-provider-location">Online, App</p>
+            <a href="https://www.classpass.com" class="wh-provider-link" target="_blank" rel="noopener noreferrer">www.classpass.com</a>
+          </div>
+
+          <!-- USHealth Group, Menhati Bennett -->
+          <div class="wh-provider-card">
+            <h3 class="wh-provider-name">USHealth Group, Menhati Bennett</h3>
+            <p class="wh-provider-type">Health Insurance Coverage</p>
+            <p class="wh-provider-location">Online</p>
+            <p class="wh-provider-phone">(301) 328-6403</p>
+            <a href="mailto:menhati.bennett@USHAdvisors.com" class="wh-provider-link">menhati.bennett@USHAdvisors.com</a>
+            <a href="https://www.ushagent.com/MenhatiBennett" class="wh-provider-link" target="_blank" rel="noopener noreferrer">www.ushagent.com/MenhatiBennett</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SPIRITUAL & HOLISTIC CARE -->
+    <section id="spiritual" class="wh-category-section" aria-label="Spiritual and Holistic Care">
+      <div class="wh-category-inner">
+        <h2 class="wh-category-heading">Spiritual &amp; Holistic Care</h2>
+        <p class="wh-category-desc">ITAVCollab partners that offer spiritual and holistic care, and support individual wellness.</p>
+        <div class="wh-provider-grid">
+
+          <!-- Inspired Thru Nature -->
+          <div class="wh-provider-card">
+            <h3 class="wh-provider-name">Inspired Thru Nature</h3>
+            <p class="wh-provider-type"><em>Spiritual Healing &amp; Usui Reiki</em></p>
+            <p class="wh-provider-location">Greenbelt, MD</p>
+            <p class="wh-provider-phone">(202) 412-2432</p>
+            <a href="mailto:info@inspiredthrunature.com" class="wh-provider-link">info@inspiredthrunature.com</a>
+            <a href="https://www.inspiredthrunature.com" class="wh-provider-link" target="_blank" rel="noopener noreferrer">www.inspiredthrunature.com</a>
+          </div>
+
+          <!-- Sankofa Yoga & Wellness Center -->
+          <div class="wh-provider-card">
+            <h3 class="wh-provider-name">Sankofa Yoga &amp; Wellness Center</h3>
+            <p class="wh-provider-type"><em>Yoga &amp; Wellness Center</em></p>
+            <p class="wh-provider-location">Laurel, MD</p>
+            <p class="wh-provider-phone">(301) 278-1864</p>
+            <a href="mailto:info@sankofayogacenter.com" class="wh-provider-link">info@sankofayogacenter.com</a>
+            <a href="https://www.sankofayogacenter.com" class="wh-provider-link" target="_blank" rel="noopener noreferrer">www.sankofayogacenter.com</a>
+          </div>
+
+          <!-- Bleu Bleue -->
+          <div class="wh-provider-card">
+            <h3 class="wh-provider-name">Bleu Bleue</h3>
+            <p class="wh-provider-type"><em>Clarity Sessions</em></p>
+            <p class="wh-provider-location">Online</p>
+            <a href="https://www.bleubluec.com" class="wh-provider-link" target="_blank" rel="noopener noreferrer">www.bleubluec.com</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ITAVCOLLAB COMMUNITY CARE -->
+    <section id="itavcollab-care" class="wh-community-section" aria-label="ITAVCollab Community Care">
+      <div class="wh-community-inner">
+        <h2 class="wh-category-heading">ITAVCollab Community Care</h2>
+        <p class="wh-category-desc">In-house programs and resources designed to support your wellness needs.</p>
+        <div class="wh-community-grid">
+          <a href="programs.html#wellness" class="wh-community-card" aria-label="Wellness Initiatives">
+            <div class="wh-community-image">
+              <img src="assets/images/wh-community-1.jpg" alt="Wellness Initiatives" loading="lazy" />
+            </div>
+            <div class="wh-community-label">Wellness Initiatives</div>
+          </a>
+          <a href="programs.html#justice" class="wh-community-card" aria-label="Healing Justice">
+            <div class="wh-community-image">
+              <img src="assets/images/wh-community-2.jpg" alt="Healing Justice" loading="lazy" />
+            </div>
+            <div class="wh-community-label">Healing Justice</div>
+          </a>
+          <a href="programs.html#organizational" class="wh-community-card" aria-label="Organizational Wellness">
+            <div class="wh-community-image">
+              <img src="assets/images/wh-community-3.jpg" alt="Organizational Wellness" loading="lazy" />
+            </div>
+            <div class="wh-community-label">Organizational Wellness</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. NOT SEEING WHAT YOU NEED -->
+    <section class="wh-not-seeing" aria-label="Not Seeing What You Need">
+      <div class="wh-not-seeing-inner">
+        <h2 class="wh-not-seeing-heading">Not Seeing What You Need?</h2>
+        <p class="wh-not-seeing-body">Submit a request and our team will help connect you to trusted resources.</p>
+        <a href="connect.html" class="btn btn-green">Contact Us</a>
+      </div>
+    </section>
+  </main><!-- /#main-content -->
+
+  <!-- FOOTER -->
+  <footer class="site-footer wsite-footer" role="contentinfo">
+    <!-- Row 1: Logo + Mission text -->
+    <div class="footer-brand">
+      <a href="/" class="wsite-logo">
+        <img class="footer-logo" src="assets/logos/itavcollab-logo.png" alt="It Takes A Village Collaborative" loading="lazy" />
+      </a>
+      <p class="footer-mission">We're building a future where wellness is a collective right — not a privilege — and where healing strengthens families, leadership, and communities across generations.<br/><br/>It Takes A Village Collaborative Inc. is a registered 501(c)(3) nonprofit organization. EIN: 83-3752480</p>
+    </div>
+    <!-- Row 2: 5 nav columns full width -->
+    <nav class="footer-nav-grid wsite-footer-nav" aria-label="Footer navigation">
+      <div class="footer-nav-col">
+        <span class="footer-nav-heading">About</span>
+        <a href="/meet-the-team" class="footer-nav-link wsite-menu-item">Meet the Team</a>
+        <a href="/our-approach" class="footer-nav-link wsite-menu-item">Our Approach</a>
+        <a href="/our-impact" class="footer-nav-link wsite-menu-item">Our Impact</a>
+      </div>
+      <div class="footer-nav-col">
+        <span class="footer-nav-heading">Programs</span>
+        <a href="/wellness-initiatives" class="footer-nav-link wsite-menu-item">Wellness Initiatives</a>
+        <a href="/healing-justice" class="footer-nav-link wsite-menu-item">Healing Justice</a>
+        <a href="/organizational-wellness" class="footer-nav-link wsite-menu-item">Organizational Wellness</a>
+        <a href="/programs#digital" class="footer-nav-link wsite-menu-item">Digital Resources</a>
+      </div>
+      <div class="footer-nav-col">
+        <span class="footer-nav-heading">Wellness Hub</span>
+        <a href="/wellness-hub#mental" class="footer-nav-link wsite-menu-item">Mental Health Care</a>
+        <a href="/wellness-hub#physical" class="footer-nav-link wsite-menu-item">Physical Health Care</a>
+        <a href="/wellness-hub#spiritual" class="footer-nav-link wsite-menu-item">Spiritual &amp; Holistic Care</a>
+        <a href="/wellness-hub#itavcollab-care" class="footer-nav-link wsite-menu-item">ITAVCollab Care</a>
+      </div>
+      <div class="footer-nav-col">
+        <span class="footer-nav-heading">Get Involved</span>
+        <a href="/donate" class="footer-nav-link wsite-menu-item">Donate</a>
+        <a href="/partner" class="footer-nav-link wsite-menu-item">Partner With Us</a>
+        <a href="/internships" class="footer-nav-link wsite-menu-item">Internships</a>
+        <a href="/events" class="footer-nav-link wsite-menu-item">Events</a>
+      </div>
+      <div class="footer-nav-col">
+        <span class="footer-nav-heading">Connect</span>
+        <a href="/connect" class="footer-nav-link wsite-menu-item">Contact Us</a>
+        <a href="/podcast" class="footer-nav-link wsite-menu-item">Podcast</a>
+        <a href="/newsletter" class="footer-nav-link wsite-menu-item">Newsletter</a>
+        <a href="/blog" class="footer-nav-link wsite-menu-item">Blog</a>
+      </div>
+    </nav>
+    <hr class="footer-divider" aria-hidden="true" />
+    <div class="footer-bottom">
+      <a href="mailto:info@itavcollab.org" class="footer-email">info@itavcollab.org</a>
+      <div class="social-icons wsite-social">
+        <a href="https://instagram.com/itavcollab" class="social-icon wsite-social-item" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><svg width="32" height="32" viewBox="0 0 40 40" fill="none"><rect x="5" y="5" width="30" height="30" rx="8" stroke="white" stroke-width="2.5"/><circle cx="20" cy="20" r="7" stroke="white" stroke-width="2.5"/><circle cx="29" cy="11" r="2" fill="white"/></svg></a>
+        <a href="https://linkedin.com/company/itavcollab" class="social-icon wsite-social-item" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><svg width="32" height="32" viewBox="0 0 40 40" fill="none"><rect x="5" y="5" width="30" height="30" rx="4" stroke="white" stroke-width="2.5"/><path d="M13 17v10M13 13v1M20 27v-5c0-2 1-3 3-3s3 1 3 3v5M20 17v10" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></a>
+        <a href="https://tiktok.com/@itavcollab" class="social-icon wsite-social-item" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><svg width="32" height="32" viewBox="0 0 40 40" fill="none"><path d="M22 10c.5 4 3 6 6 6v4c-2 0-4-.5-6-2v8a8 8 0 11-8-8v4a4 4 0 104 4V10h4z" stroke="white" stroke-width="2.5" stroke-linejoin="round"/></svg></a>
+        <a href="https://youtube.com/@itavcollab" class="social-icon wsite-social-item" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><svg width="32" height="32" viewBox="0 0 40 40" fill="none"><rect x="5" y="11" width="30" height="18" rx="5" stroke="white" stroke-width="2.5"/><path d="M17 15l8 5-8 5V15z" fill="white"/></svg></a>
+        <a href="https://facebook.com/itavcollab" class="social-icon wsite-social-item" aria-label="Facebook" target="_blank" rel="noopener noreferrer"><svg width="32" height="32" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="white" stroke-width="2.5"/><path d="M22 13h-2a4 4 0 00-4 4v2h-2v4h2v8h4v-8h3l1-4h-4v-2a1 1 0 011-1h3v-3z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/></svg></a>
+      </div>
+      <p class="footer-copyright">&copy; {current_year} It Takes A Village Collaborative Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div><!-- /.page-wrapper -->
+
+<script src="js/main.js"></script>
+%%wsite_js%%
+%%wsite_body%%
+</body>
+</html>

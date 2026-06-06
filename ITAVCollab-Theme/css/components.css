@@ -1,0 +1,211 @@
+/* ============================================================
+   COMPONENTS — Buttons, Weebly Element Overrides
+   ITAVCollab Theme
+   ============================================================ */
+
+/* ── BASE BUTTON ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-montserrat);
+  font-size: var(--size-cta);
+  font-weight: 700;
+  line-height: var(--line-height-cta);
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+.btn:hover  { opacity: 0.88; transform: translateY(-1px); }
+.btn:active { opacity: 1;    transform: translateY(0); }
+
+/* ── VARIANTS ── */
+.btn-green   { background: var(--green-accent); color: var(--white); }
+.btn-white   { background: var(--white);        color: var(--green-accent); }
+.btn-outline-green {
+  background: transparent;
+  color: var(--green-accent);
+  border: 2px solid var(--green-accent);
+}
+
+/* ── WEEBLY BUTTON ELEMENT OVERRIDES ── */
+/* Maps Weebly's .wsite-button to our design system */
+.wsite-button,
+.wsite-button-inner {
+  font-family: var(--font-montserrat) !important;
+  font-weight: 700 !important;
+  border-radius: var(--btn-radius) !important;
+  cursor: pointer !important;
+  transition: opacity 0.2s ease !important;
+}
+.wsite-button {
+  background: var(--green-accent) !important;
+  color: var(--white) !important;
+  padding: var(--btn-padding) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-decoration: none !important;
+  border: none !important;
+}
+.wsite-button:hover { opacity: 0.88 !important; }
+
+/* ── WEEBLY SECTION WRAPPERS ── */
+/* Weebly wraps each draggable section in .wsite-section */
+.wsite-section {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+.wsite-section-content {
+  max-width: 1512px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ── WEEBLY TEXT ELEMENT ── */
+.wsite-content-elem p,
+.wsite-text p {
+  font-family: var(--font-open-sans);
+  font-size: var(--size-body);
+  line-height: var(--line-height-body);
+  color: var(--primary-text);
+  margin: 0 0 16px 0;
+}
+.wsite-content-elem h2,
+.wsite-text h2 {
+  font-family: var(--font-montserrat);
+  font-size: var(--size-h2);
+  font-weight: 700;
+  line-height: var(--line-height-h2);
+  color: var(--primary-text);
+  margin: 0 0 16px 0;
+}
+.wsite-content-elem h3,
+.wsite-text h3 {
+  font-family: var(--font-montserrat);
+  font-size: var(--size-h3);
+  font-weight: 700;
+  line-height: var(--line-height-h3);
+  color: var(--primary-text);
+  margin: 0 0 12px 0;
+}
+
+/* ── WEEBLY IMAGE ELEMENT ── */
+.wsite-image {
+  display: block;
+  width: 100%;
+}
+.wsite-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── WEEBLY FORM ELEMENT ── */
+.wsite-form-container { width: 100%; }
+.wsite-form { display: flex; flex-direction: column; gap: 16px; }
+.wsite-form-label {
+  font-family: var(--font-montserrat);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--primary-text);
+  display: block;
+  margin-bottom: 6px;
+}
+.wsite-form-input,
+.wsite-form input[type="text"],
+.wsite-form input[type="email"],
+.wsite-form input[type="tel"],
+.wsite-form textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  font-family: var(--font-open-sans);
+  font-size: 15px;
+  color: var(--primary-text);
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.wsite-form-input:focus,
+.wsite-form input:focus,
+.wsite-form textarea:focus {
+  border-color: var(--green-accent);
+}
+.wsite-form textarea { resize: vertical; min-height: 120px; }
+.wsite-form-submit,
+.wsite-form input[type="submit"] {
+  background: var(--green-accent) !important;
+  color: var(--white) !important;
+  font-family: var(--font-montserrat) !important;
+  font-weight: 700 !important;
+  padding: var(--btn-padding) !important;
+  border: none !important;
+  border-radius: var(--btn-radius) !important;
+  cursor: pointer !important;
+  font-size: var(--size-cta) !important;
+  transition: opacity 0.2s !important;
+  align-self: flex-start;
+}
+.wsite-form-submit:hover,
+.wsite-form input[type="submit"]:hover { opacity: 0.88 !important; }
+
+/* ── WEEBLY MULTICOL (column layout element) ── */
+.wsite-columns { display: flex; gap: 24px; width: 100%; }
+.wsite-multicol-col { flex: 1; min-width: 0; }
+
+/* ── WEEBLY DIVIDER ── */
+.wsite-divider { border: none; border-top: 2px solid var(--border-light); margin: 32px 0; }
+
+/* ── WEEBLY SPACER ── */
+.wsite-spacer { display: block; }
+
+/* ── WEEBLY NAV OVERRIDES ── */
+/* Maps Weebly-generated %%menu%% nav markup to our navbar styles */
+.wsite-menu-default ul { list-style: none; display: flex; align-items: center; gap: 0; margin: 0; padding: 0; }
+.wsite-menu-default li { position: relative; }
+.wsite-menu-default a {
+  color: var(--green-accent);
+  font-family: var(--font-montserrat);
+  font-size: var(--size-nav);
+  font-weight: 600;
+  padding: 8px 10px;
+  display: block;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+.wsite-menu-default a:hover { opacity: 0.75; }
+.wsite-menu-default .wsite-menu { /* dropdown */
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--white);
+  border-radius: 0 0 8px 8px;
+  box-shadow: var(--dropdown-shadow);
+  min-width: 210px;
+  z-index: 9999;
+  padding: 8px 0;
+  flex-direction: column;
+}
+.wsite-menu-default li:hover > .wsite-menu { display: flex; }
+.wsite-menu-default .wsite-menu a {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--chrome-raisin-black);
+}
+.wsite-menu-default .wsite-menu a:hover { background: var(--dropdown-hover); color: var(--green-accent); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 767px) {
+  .wsite-columns { flex-direction: column; }
+  .wsite-button { width: 100%; justify-content: center !important; }
+}
