@@ -55,7 +55,6 @@
   </div>
 
   <main id="main-content" class="wsite-content">
-
 <!-- HERO — centered title -->
     <section class="team-hero-section" aria-label="Meet the Team">
       <img class="team-hero-bg" src="assets/images/team-hero.jpg" alt="The ITAVCollab team standing outdoors" />
@@ -148,23 +147,6 @@
             <div class="board-card-photo"><img src="assets/images/team-megan.jpg" alt="Megan Turner" loading="lazy" /></div>
             <p class="board-card-name">Megan Turner</p>
             <p class="board-card-role">Board Member</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- STAFF MEMBERS -->
-    <section class="staff-section" aria-label="Staff Members">
-      <div class="team-section-inner">
-        <h2 class="team-section-heading">Staff Members</h2>
-        <div class="staff-grid">
-          <div class="staff-card">
-            <p class="staff-name">Latoya Godbee</p>
-            <p class="staff-role">Administrative Assistant</p>
-          </div>
-          <div class="staff-card">
-            <p class="staff-name">Kamore Campbell</p>
-            <p class="staff-role">Social Media Manager</p>
           </div>
         </div>
       </div>
