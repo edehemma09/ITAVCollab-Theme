@@ -32,18 +32,106 @@ ul { list-style: none; }
 .navbar-logo { display: flex; align-items: center; flex-shrink: 0; transition: opacity 0.2s; }
 .navbar-logo:hover { opacity: 0.85; }
 .navbar-logo img { width: 72px; height: 72px; object-fit: contain; }
-.nav-links { display: flex; align-items: center; gap: 0; overflow: visible; }
-.nav-link-item { display: flex; align-items: center; gap: 4px; padding: 8px 10px; position: relative; cursor: pointer; }
-.nav-label { color: var(--green-accent); font-family: var(--font-montserrat); font-size: var(--size-nav); font-weight: 600; line-height: var(--line-height-nav); letter-spacing: -0.019em; white-space: nowrap; transition: opacity 0.2s; }
-.nav-label:hover { opacity: 0.75; }
-.nav-label--active { border-bottom: 2px solid var(--green-accent); }
-.dropdown-arrow { flex-shrink: 0; transition: transform 0.25s ease; }
-.nav-link-item.has-dropdown:hover .dropdown-arrow { transform: rotate(180deg); }
-.nav-link-item.has-dropdown { position: relative; }
-.nav-link-item.has-dropdown .nav-dropdown { display: none; position: absolute; top: calc(100% + 2px); left: 0; background: var(--white); border-radius: 0 0 8px 8px; box-shadow: var(--dropdown-shadow); border: 1px solid var(--border-light); border-top: none; min-width: 210px; z-index: 9999; flex-direction: column; padding: 8px 0; pointer-events: all; }
-.nav-link-item.has-dropdown:hover .nav-dropdown { display: flex; }
-.nav-dropdown-item { display: block; padding: 12px 24px; color: var(--chrome-raisin-black); font-family: var(--font-montserrat); font-size: 16px; font-weight: 500; transition: background 0.15s, color 0.15s; }
-.nav-dropdown-item:hover { background: var(--dropdown-hover); color: var(--green-accent); }
+/* ============================================================
+   NAVBAR MENU — styles Weebly's auto-generated %%MENU%% output
+   Weebly renders: <ul><li id="active"><a href="...">Page</a></li>...</ul>
+   Sub-pages created under a parent in the Weebly Pages panel render
+   as a nested <ul> inside that <li>, which we style as a dropdown.
+   ============================================================ */
+.nav-links { display: flex; align-items: center; overflow: visible; }
+.nav-links ul,
+.wsite-menu-default ul {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li,
+.wsite-menu-default li {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.nav-links > ul > li > a,
+.wsite-menu-default > ul > li > a {
+  display: block;
+  padding: 8px 14px;
+  color: var(--green-accent);
+  font-family: var(--font-montserrat);
+  font-size: var(--size-nav);
+  font-weight: 600;
+  line-height: var(--line-height-nav);
+  letter-spacing: -0.019em;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.nav-links > ul > li > a:hover,
+.wsite-menu-default > ul > li > a:hover { opacity: 0.75; }
+/* Weebly marks the current page's <li> with id="active" */
+.nav-links li#active > a,
+.wsite-menu-default li#active > a {
+  border-bottom: 2px solid var(--green-accent);
+}
+
+/* Sub-pages (children created under a parent page) render as a
+   nested <ul> inside the parent <li> — style it as a dropdown */
+.nav-links li ul,
+.wsite-menu-default li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  background: var(--white);
+  border-radius: 0 0 8px 8px;
+  box-shadow: var(--dropdown-shadow);
+  border: 1px solid var(--border-light);
+  border-top: none;
+  min-width: 210px;
+  z-index: 9999;
+  padding: 8px 0;
+}
+.nav-links li:hover > ul,
+.wsite-menu-default li:hover > ul { display: flex; }
+.nav-links li ul li,
+.wsite-menu-default li ul li { width: 100%; }
+.nav-links li ul li a,
+.wsite-menu-default li ul li a {
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+  color: var(--chrome-raisin-black);
+  font-family: var(--font-montserrat);
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.nav-links li ul li a:hover,
+.wsite-menu-default li ul li a:hover {
+  background: var(--dropdown-hover);
+  color: var(--green-accent);
+}
+/* Small caret to indicate a dropdown exists — pure CSS, no SVG needed
+   since Weebly does not let us inject markup into %%MENU%% */
+.nav-links li:has(> ul) > a::after,
+.wsite-menu-default li:has(> ul) > a::after {
+  content: '';
+  display: inline-block;
+  margin-left: 6px;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid var(--green-accent);
+  vertical-align: middle;
+}
+
 .navbar-donate-btn { flex-shrink: 0; padding: var(--btn-donate-padding) !important; }
 .hamburger-btn { display: none; flex-direction: column; gap: 5px; background: transparent; border: none; cursor: pointer; padding: 8px; }
 .hamburger-btn span { display: block; width: 26px; height: 2px; background: var(--green-accent); border-radius: 2px; transition: all 0.3s; }
@@ -59,13 +147,63 @@ ul { list-style: none; }
 .mobile-overlay { display: block; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: var(--z-overlay); opacity: 0; pointer-events: none; transition: opacity 0.3s; }
 .mobile-overlay.visible { opacity: 1; pointer-events: all; }
 .mobile-menu-close { position: absolute; top: 20px; right: 20px; background: transparent; border: none; cursor: pointer; font-size: 28px; color: var(--green-accent); line-height: 1; }
-.mobile-nav-link { color: var(--green-accent); font-family: var(--font-montserrat); font-size: 18px; font-weight: 600; padding: 14px 0; border-bottom: 1px solid var(--chrome-granite-gray); display: flex; justify-content: space-between; align-items: center; width: 100%; background: transparent; border-top: none; border-left: none; border-right: none; cursor: pointer; }
-.nav-link-dropdown .mobile-nav-link svg { transition: transform 0.3s ease; }
-.nav-link-dropdown.dropdown-open .mobile-nav-link svg { transform: rotate(180deg); }
-.mobile-submenu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding-left: 16px; background: var(--dropdown-hover); }
-.nav-link-dropdown.dropdown-open .mobile-submenu { max-height: 500px; }
-.mobile-submenu a { display: block; padding: 10px 0; color: var(--chrome-raisin-black); font-family: var(--font-montserrat); font-size: 15px; font-weight: 500; border-bottom: 1px solid var(--chrome-granite-gray); transition: color 0.15s; }
-.mobile-submenu a:hover { color: var(--green-accent); }
+
+/* Mobile menu reuses the SAME %%MENU%% list Weebly generates for
+   desktop — we only change how it's laid out inside .mobile-menu */
+.mobile-menu .wsite-menu-default > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+}
+.mobile-menu .wsite-menu-default > ul > li {
+  width: 100%;
+  flex-direction: column;
+  align-items: stretch;
+  border-bottom: 1px solid var(--chrome-granite-gray);
+}
+.mobile-menu .wsite-menu-default > ul > li > a {
+  color: var(--green-accent);
+  font-family: var(--font-montserrat);
+  font-size: 18px;
+  font-weight: 600;
+  padding: 14px 0;
+  display: block;
+  width: 100%;
+}
+/* Caret rotates when a top-level item with children is expanded */
+.mobile-menu .wsite-menu-default > ul > li:has(> ul) > a::after {
+  float: right;
+  transition: transform 0.3s ease;
+}
+.mobile-menu .wsite-menu-default > ul > li.dropdown-open > a::after {
+  transform: rotate(180deg);
+}
+/* Submenu — collapsed by default, expanded via JS max-height + class */
+.mobile-menu .wsite-menu-default li ul {
+  position: static;
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  box-shadow: none;
+  border: none;
+  min-width: 0;
+  padding: 0 0 0 16px;
+  background: var(--dropdown-hover);
+  transition: max-height 0.3s ease;
+}
+.mobile-menu .wsite-menu-default li ul li {
+  border-bottom: 1px solid var(--chrome-granite-gray);
+}
+.mobile-menu .wsite-menu-default li ul li a {
+  display: block;
+  padding: 10px 0;
+  color: var(--chrome-raisin-black);
+  font-family: var(--font-montserrat);
+  font-size: 15px;
+  font-weight: 500;
+}
+.mobile-menu .wsite-menu-default li ul li a:hover { color: var(--green-accent); }
 .mobile-donate-btn { margin-top: 24px; display: block; text-align: center; }
 
 /* ============================================================

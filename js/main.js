@@ -30,43 +30,49 @@ document.addEventListener('DOMContentLoaded', function () {
   if (closeBtn) closeBtn.addEventListener('click', closeMenu);
 
   /* ================================================================
-     MOBILE MENU — accordion for items that HAVE a submenu
-     Plain <a> links navigate normally (no accordion).
-     Only <button class="mobile-nav-link"> inside .nav-link-dropdown
-     triggers the accordion.
+     MOBILE MENU — accordion for Weebly's real %%MENU%% markup
+     Weebly outputs: <ul><li><a>Page</a><ul><li><a>Sub</a></li></ul></li></ul>
+     We can't change that markup, so we detect any <li> that contains
+     a nested <ul> and turn its direct <a> into an accordion toggle
+     ONLY inside the mobile menu. Desktop keeps the CSS :hover dropdown.
+     Plain links (no nested <ul>) navigate normally — untouched.
   ================================================================ */
-  var dropdownBtns = document.querySelectorAll(
-    '.mobile-menu .nav-link-dropdown > button.mobile-nav-link'
-  );
-  dropdownBtns.forEach(function (btn) {
-    btn.addEventListener('click', function (e) {
-      e.preventDefault(); // stop button from navigating
-      var parent  = btn.closest('.nav-link-dropdown');
-      var submenu = parent ? parent.querySelector('.mobile-submenu') : null;
-      if (!submenu) return;
+  var mobileMenuList = mobileMenu ? mobileMenu.querySelector('.wsite-menu-default') : null;
+  if (mobileMenuList) {
+    var parentItems = mobileMenuList.querySelectorAll('li');
+    parentItems.forEach(function (li) {
+      var submenu = li.querySelector(':scope > ul');
+      var link    = li.querySelector(':scope > a');
+      if (!submenu || !link) return; // no children -> plain navigation link
 
-      // Close other open dropdowns
-      document.querySelectorAll('.mobile-menu .nav-link-dropdown.dropdown-open')
-        .forEach(function (other) {
-          if (other !== parent) {
-            other.classList.remove('dropdown-open');
-            var otherSub = other.querySelector('.mobile-submenu');
-            if (otherSub) otherSub.style.maxHeight = '0';
-          }
+      submenu.style.maxHeight = '0';
+      submenu.style.overflow  = 'hidden';
+      submenu.style.transition = 'max-height 0.3s ease';
+
+      link.addEventListener('click', function (e) {
+        e.preventDefault(); // this <a> only toggles, it does not navigate
+        var isOpen = li.classList.toggle('dropdown-open');
+
+        // close sibling dropdowns at the same level
+        var siblings = Array.prototype.filter.call(li.parentNode.children, function (sib) {
+          return sib !== li && sib.tagName === 'LI';
+        });
+        siblings.forEach(function (sib) {
+          sib.classList.remove('dropdown-open');
+          var sibSub = sib.querySelector(':scope > ul');
+          if (sibSub) sibSub.style.maxHeight = '0';
         });
 
-      var isOpen = parent.classList.toggle('dropdown-open');
-      submenu.style.maxHeight = isOpen ? submenu.scrollHeight + 'px' : '0';
+        submenu.style.maxHeight = isOpen ? submenu.scrollHeight + 'px' : '0';
+      });
     });
-  });
+  }
 
   /* ================================================================
-     DESKTOP NAV — parent links navigate on click.
-     Dropdown opens on CSS :hover (no JS needed).
-     This ensures clicking "About" in the desktop nav goes to about.html
+     DESKTOP NAV — dropdown opens on CSS :hover, no JS needed.
+     Top-level links with children are toggles only on mobile;
+     on desktop the href still works since hover reveals children.
   ================================================================ */
-  // Nothing needed — desktop uses CSS hover for dropdowns.
-  // The <a class="nav-label"> href already navigates on click naturally.
 
   /* ================================================================
      SMOOTH SCROLL — anchor links only
