@@ -3430,3 +3430,47 @@ body:has(#mobile-input:checked) {
 @media (min-width: 901px) {
   #mobile-nav { display: none; }
 }
+
+/* ============================================================
+   HEADER TYPE VARIANTS
+   Each .html file sets a distinct body class (matches Weebly's
+   own pattern: tall-header-page, short-header-page, no-header-page,
+   splash-page). These rules size/position #banner differently
+   per variant, and the navbar adapts for the splash overlay case.
+   ============================================================ */
+
+/* ---- Tall / Large Header (index.html) — default for new pages ---- */
+.tall-header-page #banner { min-height: 480px; }
+.tall-header-page .page-hero-title { font-size: var(--size-h1); }
+
+/* ---- Short Header (short-header.html) — compact banner ---- */
+.short-header-page #banner { min-height: 220px; }
+.short-header-page .page-hero-title { font-size: 32px; }
+.short-header-page .page-hero-subtitle { font-size: 16px; }
+
+/* ---- No Header (no-header.html) — no banner block at all ---- */
+.no-header-page #main { padding-top: 0; }
+
+/* ---- Splash (splash.html) — full-bleed background, header overlays ---- */
+.splash-page #wrapper { display: block; }
+.splash-page #banner.splash-banner {
+  min-height: 100vh;
+  position: relative;
+}
+.splash-page #header.splash-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: transparent;
+  box-shadow: none;
+}
+.splash-page #header.splash-header .navbar-logo img,
+.splash-page #header.splash-header .nav-links a {
+  /* logo/nav remain readable over the splash photo */
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5));
+}
+.splash-page #header.splash-header .nav-links li > a { color: var(--white); }
+.splash-page #header.splash-header .hamburger-btn span { background: var(--white); }
+.splash-page #main { position: relative; z-index: 5; background: var(--background); }

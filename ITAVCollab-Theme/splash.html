@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
 </head>
-<body class="tall-header-page">
+<body class="splash-page">
 <div id="wrapper">
 
   <!-- ICON BAR (decorative top strip, not a Weebly-required region) -->
@@ -22,8 +22,8 @@
     </div>
   </div>
 
-  <!-- HEADER — mandatory Weebly region -->
-  <div id="header">
+  <!-- HEADER — overlays transparently on top of the splash background image -->
+  <div id="header" class="splash-header">
     <div class="container navbar-inner">
       <label id="menu-button" class="hamburger-btn" for="mobile-input" aria-label="Open menu">
         <span></span><span></span><span></span>
@@ -44,8 +44,8 @@
     </div>
   </div>
 
-  <!-- BANNER (page headline area, present on pages that use a headline) -->
-  <div id="banner" class="wsite-background page-hero">
+  <!-- BANNER — full-page splash background, header sits on top of it -->
+  <div id="banner" class="wsite-background splash-banner page-hero">
     <div class="banner-content">
       <div class="container page-hero-content">
         <h2 class="page-hero-title">{headline:text global="false"}</h2>
