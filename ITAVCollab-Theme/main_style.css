@@ -1,4 +1,4 @@
-/* Montserrat + Open Sans fonts loaded via <link> in index.html */
+/* Montserrat + Open Sans loaded via <link> in index.html */
 
 :root {
   /* ── BRAND COLORS ─────────────────────────────── */
@@ -63,7 +63,7 @@
   --z-overlay:    1000;
   --z-mobile-menu: 1001;
 }
-/* variables.css merged below — @import removed since this is one file */
+/* variables.css already merged above */
 
 /* ============================================================
    RESET & BASE
@@ -3173,41 +3173,151 @@ ul { list-style: none; }
 }
 
 /* ============================================================
-   WEEBLY-GENERATED MENU STYLING
-   %%MENU%% outputs: <ul><li id="active"><a href="...">Page</a></li>...</ul>
-   Style that raw output to match our navbar/mobile-menu design.
+   WEEBLY DEVELOPER THEME — STRUCTURAL WRAPPER STYLES
+   #wrapper / #header / #banner / #main / #footer are the
+   mandatory containers used by short-header-page (per Weebly's
+   own base-css-theme reference implementation).
    ============================================================ */
-.nav-links ul,
+#wrapper { display: flex; flex-direction: column; min-height: 100vh; }
+.container { max-width: 1512px; margin: 0 auto; width: 100%; box-sizing: border-box; }
+
+#header {
+  background: var(--background);
+  box-shadow: var(--nav-shadow);
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: var(--z-navbar);
+}
+#header .navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  overflow: visible;
+  position: relative;
+}
+.navbar-logo { display: flex; align-items: center; flex-shrink: 0; }
+.navbar-logo img { width: 64px; height: 64px; object-fit: contain; }
+
+#nav.nav-links { display: flex; align-items: center; overflow: visible; }
+
+#banner {
+  position: relative;
+  min-height: 380px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--green-dark);
+}
+#banner .banner-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+}
+#banner .page-hero-title {
+  font-family: var(--font-montserrat);
+  font-weight: 700;
+  font-size: var(--size-h1);
+  color: var(--white);
+  margin: 0 0 8px 0;
+}
+#banner .page-hero-subtitle {
+  font-family: var(--font-open-sans);
+  font-size: 18px;
+  color: rgba(255,255,255,0.9);
+  margin: 0;
+}
+/* If a page has no headline text, Weebly leaves the tag empty —
+   collapse the banner so empty pages don't show a blank green bar */
+#banner:has(.page-hero-title:empty):has(.page-hero-subtitle:empty) {
+  display: none;
+}
+
+#main { width: 100%; }
+#main .container { padding: 0; }
+
+#footer.site-footer { background: var(--footer-bg); }
+.footer-logo-wrap img { width: 88px; height: 88px; object-fit: contain; background: var(--white); border-radius: 8px; padding: 6px; }
+
+/* ============================================================
+   MOBILE NAV — CSS checkbox toggle (no JavaScript dependency)
+   #mobile-input is the hidden checkbox; #menu-button is the
+   <label> that toggles it; #mobile-input:checked drives the
+   open state purely in CSS, matching Weebly's reference pattern.
+   ============================================================ */
+#mobile-nav { position: relative; }
+#mobile-input { display: none; }
+
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+}
+.hamburger-btn span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--green-accent);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(320px, 85vw);
+  height: 100vh;
+  overflow-y: auto;
+  z-index: var(--z-mobile-menu);
+  padding: 80px 24px 120px;
+  transition: right 0.3s ease;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+}
+#mobile-input:checked ~ .mobile-menu,
+#mobile-nav:has(#mobile-input:checked) .mobile-menu {
+  right: 0;
+}
+#mobile-input:checked ~ #mobile-nav .hamburger-btn span:nth-child(1),
+label[for="mobile-input"].hamburger-btn {
+  /* hamburger lives in #header, not inside #mobile-nav, so toggle
+     via the global :has() selector below */
+}
+body:has(#mobile-input:checked) #header label.hamburger-btn span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+body:has(#mobile-input:checked) #header label.hamburger-btn span:nth-child(2) {
+  opacity: 0;
+}
+body:has(#mobile-input:checked) #header label.hamburger-btn span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+body:has(#mobile-input:checked) {
+  overflow: hidden;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 28px;
+  color: var(--green-accent);
+  line-height: 1;
+}
+
 .mobile-nav-list ul {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-.nav-links ul {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.nav-links li {
-  position: relative;
-}
-.nav-links li > a {
-  display: block;
-  padding: 8px 14px;
-  font-family: var(--font-montserrat);
-  font-size: var(--size-nav);
-  font-weight: 600;
-  color: var(--green-accent);
-  text-decoration: none;
-  white-space: nowrap;
-  transition: opacity 0.2s;
-}
-.nav-links li > a:hover { opacity: 0.75; }
-.nav-links li#active > a {
-  border-bottom: 2px solid var(--green-accent);
-}
-
-.mobile-nav-list ul {
   display: flex;
   flex-direction: column;
 }
@@ -3221,30 +3331,37 @@ ul { list-style: none; }
   text-decoration: none;
   border-bottom: 1px solid var(--chrome-granite-gray);
 }
-.mobile-nav-list li#active > a {
-  color: var(--green-dark);
+.mobile-nav-list li > ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 16px;
+  background: var(--dropdown-hover);
+}
+.mobile-nav-list li > ul > li > a {
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 500;
 }
 
-/* Weebly requires %%WEEBLYFOOTER%% to remain in the markup but we
-   render our own custom footer text above it, so keep it visually
-   unobtrusive without removing/hiding it from the DOM (Weebly TOS). */
-.weebly-footer-text {
-  font-family: var(--font-open-sans);
-  font-size: 11px;
-  color: rgba(255,255,255,0.55);
-  text-align: center;
-  margin-top: 4px;
+/* Weebly auto-generated %%MENU%%-style markup re-used here as {menu} */
+.nav-links ul,
+.mobile-nav-list ul { list-style: none; margin: 0; padding: 0; }
+.nav-links { gap: 0; }
+.nav-links > ul { display: flex; align-items: center; gap: 0; }
+.nav-links li { position: relative; }
+.nav-links li > a {
+  display: block;
+  padding: 8px 14px;
+  font-family: var(--font-montserrat);
+  font-size: var(--size-nav);
+  font-weight: 600;
+  color: var(--green-accent);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s;
 }
-.weebly-footer-text a {
-  color: rgba(255,255,255,0.7);
-}
-
-/* ============================================================
-   WEEBLY NESTED SUBPAGE DROPDOWNS
-   When pages are indented as subpages in the Weebly editor,
-   %%MENU%% outputs a nested <ul> inside the parent <li>:
-   <li><a href="/about">About</a><ul><li><a href="/team">Team</a></li></ul></li>
-   ============================================================ */
+.nav-links li > a:hover { opacity: 0.75; }
+.nav-links li#active > a { border-bottom: 2px solid var(--green-accent); }
 .nav-links li > ul {
   display: none;
   position: absolute;
@@ -3257,8 +3374,6 @@ ul { list-style: none; }
   z-index: 9999;
   flex-direction: column;
   padding: 8px 0;
-  list-style: none;
-  margin: 0;
 }
 .nav-links li:hover > ul { display: flex; }
 .nav-links li > ul > li > a {
@@ -3272,17 +3387,46 @@ ul { list-style: none; }
   color: var(--green-accent);
 }
 
-.mobile-nav-list li > ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 16px;
-  background: var(--dropdown-hover);
-  display: none;
+/* {action:button} injected donate button — style to match design */
+#header .wsite-button {
+  background: var(--green-accent) !important;
+  color: var(--white) !important;
+  border-radius: var(--btn-radius) !important;
+  padding: var(--btn-donate-padding) !important;
+  font-family: var(--font-montserrat) !important;
+  font-weight: 700 !important;
 }
-.mobile-nav-list li.mobile-submenu-open > ul { display: flex; flex-direction: column; }
-.mobile-nav-list li > ul > li > a {
-  padding: 10px 0;
-  font-size: 15px;
-  font-weight: 500;
-  border-bottom: 1px solid var(--chrome-granite-gray);
+
+/* {social} icon row injected into footer */
+.social-icons a { display: flex; align-items: center; justify-content: center; }
+.social-icons img,
+.social-icons svg { width: 28px; height: 28px; }
+
+/* {membership} (sign in/out) injected into icon bar */
+.icon-bar-right .wsite-custom-membership-wrapper a {
+  color: var(--white);
+  font-family: var(--font-montserrat);
+  font-size: 14px;
+}
+
+/* Weebly required footer text line — kept visible per platform terms */
+.weebly-footer-text {
+  font-family: var(--font-open-sans);
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  text-align: center;
+  margin-top: 4px;
+}
+.weebly-footer-text a { color: rgba(255,255,255,0.7); }
+
+/* ============================================================
+   RESPONSIVE — show hamburger / hide desktop nav on small screens
+   ============================================================ */
+@media (max-width: 900px) {
+  #nav.nav-links { display: none; }
+  #header .wsite-button { display: none; }
+  .hamburger-btn { display: flex; }
+}
+@media (min-width: 901px) {
+  #mobile-nav { display: none; }
 }

@@ -1,0 +1,8 @@
+{
+  "manifest": "1",
+  "version": "1.0.0",
+  "responsive": true,
+  "glyph-icons": true,
+  "is-dark": false,
+  "tmpSocialIconFont": true
+}
