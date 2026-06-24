@@ -1,0 +1,78 @@
+{
+  "name": "ITAVCollab Weebly Starter (Pro)",
+  "version": "1.0.0",
+  "author": "edehemma09",
+  "description": "Starter theme manifest to help convert this static repo into a Weebly-compatible theme. Contains a recommended settings schema and template mappings for a Pro-style conversion.",
+  "weeblySchemaVersion": "1.0",
+  "templates": {
+    "layout": "layout.html",
+    "index": "index.html",
+    "pages": [
+      "about.html",
+      "programs.html",
+      "contact.html",
+      "donate.html",
+      "connect.html",
+      "blog.html",
+      "meet-the-team.html",
+      "our-approach.html",
+      "our-impact.html",
+      "wellness-hub.html",
+      "newsletter.html"
+    ],
+    "blog": "blog.html",
+    "post": "post.html"
+  },
+  "settings": [
+    {
+      "id": "brand",
+      "label": "Brand",
+      "controls": [
+        { "type": "image", "id": "logo", "label": "Logo", "default": "assets/logos/itavcollab-logo.png" },
+        { "type": "text", "id": "site_title", "label": "Site title", "default": "It Takes A Village Collaborative" },
+        { "type": "textarea", "id": "footer_text", "label": "Footer text", "default": "© 2026 It Takes A Village Collaborative Inc. All rights reserved." }
+      ]
+    },
+    {
+      "id": "colors",
+      "label": "Colors",
+      "controls": [
+        { "type": "color", "id": "primary_color", "label": "Primary color", "default": "#29741D" },
+        { "type": "color", "id": "accent_color", "label": "Accent color", "default": "#FFFFFF" },
+        { "type": "color", "id": "button_color", "label": "Button color", "default": "#29741D" }
+      ]
+    },
+    {
+      "id": "typography",
+      "label": "Typography",
+      "controls": [
+        { "type": "select", "id": "font_family", "label": "Font family", "options": ["Inter", "System", "Georgia", "Times New Roman"], "default": "Inter" }
+      ]
+    },
+    {
+      "id": "social",
+      "label": "Social links",
+      "controls": [
+        { "type": "text", "id": "instagram", "label": "Instagram URL", "default": "https://instagram.com/itavcollab" },
+        { "type": "text", "id": "linkedin", "label": "LinkedIn URL", "default": "https://linkedin.com/company/itavcollab" },
+        { "type": "text", "id": "youtube", "label": "YouTube URL", "default": "https://youtube.com/@itavcollab" }
+      ]
+    }
+  ],
+  "editableRegions": {
+    "index.html": [
+      { "id": "hero_title", "selector": "h1.hero-title", "type": "text" },
+      { "id": "hero_subtitle", "selector": "p.hero-subtitle", "type": "text" },
+      { "id": "hero_cta", "selector": "a.btn.btn-white", "type": "link" },
+      { "id": "featured_offerings", "selector": ".offerings-grid", "type": "richtext" }
+    ],
+    "about.html": [
+      { "id": "about_content", "selector": ".who-we-are-text", "type": "richtext" }
+    ],
+    "footer": [
+      { "id": "footer_mission", "selector": ".footer-mission", "type": "richtext" },
+      { "id": "footer_email", "selector": ".footer-email", "type": "text" }
+    ]
+  },
+  "notes": "This file is a starter manifest to help people converting this static repo into a Weebly theme. Weebly's official theme schema or keys may differ; adapt the settings and editableRegions to the current Weebly theme spec before packaging. Typical next steps: extract header/footer into layout.html, replace static content with Weebly editable placeholders, create blog post template (post.html), and test by zipping and uploading to a Weebly account."
+}
