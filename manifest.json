@@ -1,0 +1,47 @@
+{
+  "name": "ITAVCollab Weebly Theme (converted)",
+  "version": "1.0.0",
+  "author": "edehemma09",
+  "description": "Weebly theme manifest generated from the static ITAVCollab-Theme repo. Adapt and test in Weebly theme uploader.",
+  "responsive": true,
+  "preview_image": "assets/logos/itavcollab-logo.png",
+  "options": {
+    "search": true,
+    "socialIcons": true,
+    "showDonateButton": true
+  },
+  "templates": {
+    "layout": "layout.html",
+    "index": "index.html",
+    "page": "page.html",
+    "blog_index": "blog.html",
+    "blog_post": "post.html"
+  },
+  "settings": [
+    {
+      "id": "branding",
+      "label": "Branding",
+      "controls": [
+        { "type": "image", "id": "logo", "label": "Logo", "default": "assets/logos/itavcollab-logo.png" },
+        { "type": "text", "id": "site_title", "label": "Site title", "default": "It Takes A Village Collaborative" }
+      ]
+    },
+    {
+      "id": "colors",
+      "label": "Colors",
+      "controls": [
+        { "type": "color", "id": "primary_color", "label": "Primary color", "default": "#29741D" },
+        { "type": "color", "id": "accent_color", "label": "Accent color", "default": "#FFFFFF" }
+      ]
+    },
+    {
+      "id": "footer",
+      "label": "Footer",
+      "controls": [
+        { "type": "textarea", "id": "footer_text", "label": "Footer text", "default": "© 2026 It Takes A Village Collaborative Inc. All rights reserved." },
+        { "type": "text", "id": "contact_email", "label": "Contact email", "default": "info@itavcollab.org" }
+      ]
+    }
+  ],
+  "notes": "Weebly expects a manifest.json at the root of the theme zip. The exact schema can change — test this file by packaging the theme and uploading to a Weebly account, then adapt fields (editable regions, template names, and settings) to match Weebly's current theme spec before distribution."
+}
